@@ -1082,7 +1082,7 @@
     pirates "^4.0.6"
     source-map-support "^0.5.16"
 
-"@babel/runtime@^7.18.6", "@babel/runtime@^7.20.0", "@babel/runtime@^7.25.0", "@babel/runtime@^7.6.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.18.6", "@babel/runtime@^7.20.0", "@babel/runtime@^7.25.0", "@babel/runtime@^7.8.4":
   version "7.26.9"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.26.9.tgz"
   integrity sha512-aA63XwOkcl4xxQa3HjPMqOP6LiK0ZDv3mUPYEFXkpHbaFjtGggE1A61FjFzJnB+p7/oy2gA8E+rcBNl/zC1tMg==
@@ -1328,9 +1328,6 @@
     resolve-from "^5.0.0"
     semver "^7.6.0"
 
-"@expo/html-elements@latest":
-  version "0.11.2"
-
 "@expo/image-utils@^0.6.5":
   version "0.6.5"
   resolved "https://registry.npmjs.org/@expo/image-utils/-/image-utils-0.6.5.tgz"
@@ -1484,368 +1481,6 @@
     find-up "^5.0.0"
     js-yaml "^4.1.0"
 
-"@formatjs/ecma402-abstract@2.3.3":
-  version "2.3.3"
-  dependencies:
-    "@formatjs/fast-memoize" "2.2.6"
-    "@formatjs/intl-localematcher" "0.6.0"
-    decimal.js "10"
-    tslib "2"
-
-"@formatjs/fast-memoize@2.2.6":
-  version "2.2.6"
-  dependencies:
-    tslib "2"
-
-"@formatjs/icu-messageformat-parser@2.11.1":
-  version "2.11.1"
-  dependencies:
-    "@formatjs/ecma402-abstract" "2.3.3"
-    "@formatjs/icu-skeleton-parser" "1.8.13"
-    tslib "2"
-
-"@formatjs/icu-skeleton-parser@1.8.13":
-  version "1.8.13"
-  dependencies:
-    "@formatjs/ecma402-abstract" "2.3.3"
-    tslib "2"
-
-"@formatjs/intl-localematcher@0.6.0":
-  version "0.6.0"
-  dependencies:
-    tslib "2"
-
-"@gluestack-style/animation-resolver@1.0.4":
-  version "1.0.4"
-
-"@gluestack-style/legend-motion-animation-driver@1.0.3":
-  version "1.0.3"
-
-"@gluestack-style/react@>=1.0", "@gluestack-style/react@>=1.0.27", "@gluestack-style/react@>=1.0.57":
-  version "1.0.57"
-  dependencies:
-    inline-style-prefixer "^6.0.1"
-    normalize-css-color "^1.0.2"
-
-"@gluestack-ui/accordion@1.0.13":
-  version "1.0.13"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/accordion" "^0.0.2"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/actionsheet@0.2.51":
-  version "0.2.51"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "^0.1.21"
-    "@gluestack-ui/transitions" "^0.1.11"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/dialog" "^0.0.4"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/alert-dialog@0.1.37":
-  version "0.1.37"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "^0.1.21"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/dialog" "^0.0.4"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/alert@0.1.16":
-  version "0.1.16"
-
-"@gluestack-ui/avatar@0.1.18":
-  version "0.1.18"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.14"
-
-"@gluestack-ui/button@1.0.13":
-  version "1.0.13"
-  dependencies:
-    "@gluestack-ui/utils" "0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/checkbox@0.1.38":
-  version "0.1.38"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-aria/visually-hidden" "^3.8.6"
-    "@react-native-aria/checkbox" "^0.2.9"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/checkbox" "^3.4.2"
-
-"@gluestack-ui/divider@0.1.10":
-  version "0.1.10"
-
-"@gluestack-ui/fab@0.1.27":
-  version "0.1.27"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/form-control@^0.1.19", "@gluestack-ui/form-control@0.1.19":
-  version "0.1.19"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.14"
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/hooks@0.1.13":
-  version "0.1.13"
-
-"@gluestack-ui/icon@0.1.25":
-  version "0.1.25"
-  dependencies:
-    "@gluestack-ui/provider" "^0.1.13"
-    "@gluestack-ui/utils" "^0.1.14"
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/image@0.1.16":
-  version "0.1.16"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/input@0.1.37":
-  version "0.1.37"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/link@0.1.28":
-  version "0.1.28"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/menu@0.2.42":
-  version "0.2.42"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "^0.1.21"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-aria/menu" "^3.14.1"
-    "@react-aria/overlays" "^3.19.0"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/menu" "0.2.14"
-    "@react-native-aria/overlays" "^0.3.12"
-    "@react-stately/utils" "^3.6.0"
-    react-stately "^3.21.0"
-
-"@gluestack-ui/modal@0.1.40":
-  version "0.1.40"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "^0.1.21"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/dialog" "^0.0.4"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/overlays" "^0.3.12"
-
-"@gluestack-ui/overlay@^0.1.16", "@gluestack-ui/overlay@^0.1.20", "@gluestack-ui/overlay@^0.1.21", "@gluestack-ui/overlay@0.1.21":
-  version "0.1.21"
-  dependencies:
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/overlays" "^0.3.12"
-
-"@gluestack-ui/popover@0.1.48":
-  version "0.1.48"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "0.1.21"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/dialog" "^0.0.4"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/overlays" "0.3.14"
-
-"@gluestack-ui/pressable@0.1.22":
-  version "0.1.22"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/progress@0.1.18":
-  version "0.1.18"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.14"
-
-"@gluestack-ui/provider@^0.1.13", "@gluestack-ui/provider@0.1.18":
-  version "0.1.18"
-  dependencies:
-    "@react-native-aria/interactions" "0.2.15"
-    tsconfig "7"
-    typescript "^5.6.3"
-
-"@gluestack-ui/radio@0.1.39":
-  version "0.1.39"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-aria/visually-hidden" "^3.7.0"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/radio" "^0.2.12"
-    "@react-stately/radio" "^3.8.1"
-
-"@gluestack-ui/react-native-aria@^0.1.6":
-  version "0.1.7"
-  dependencies:
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/select@0.1.31":
-  version "0.1.31"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/utils" "^0.1.14"
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/slider@0.1.31":
-  version "0.1.31"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-aria/visually-hidden" "^3.8.1"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/slider" "^0.2.11"
-    "@react-stately/slider" "^3.2.4"
-
-"@gluestack-ui/spinner@0.1.15":
-  version "0.1.15"
-
-"@gluestack-ui/switch@0.1.28":
-  version "0.1.28"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-stately/toggle" "^3.4.4"
-
-"@gluestack-ui/tabs@0.1.23":
-  version "0.1.23"
-  dependencies:
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-
-"@gluestack-ui/textarea@0.1.24":
-  version "0.1.24"
-  dependencies:
-    "@gluestack-ui/form-control" "^0.1.19"
-    "@gluestack-ui/utils" "^0.1.14"
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/themed@>=1.1.43":
-  version "1.1.70"
-  dependencies:
-    "@expo/html-elements" latest
-    "@gluestack-style/animation-resolver" "1.0.4"
-    "@gluestack-style/legend-motion-animation-driver" "1.0.3"
-    "@gluestack-ui/accordion" "1.0.13"
-    "@gluestack-ui/actionsheet" "0.2.51"
-    "@gluestack-ui/alert" "0.1.16"
-    "@gluestack-ui/alert-dialog" "0.1.37"
-    "@gluestack-ui/avatar" "0.1.18"
-    "@gluestack-ui/button" "1.0.13"
-    "@gluestack-ui/checkbox" "0.1.38"
-    "@gluestack-ui/divider" "0.1.10"
-    "@gluestack-ui/fab" "0.1.27"
-    "@gluestack-ui/form-control" "0.1.19"
-    "@gluestack-ui/icon" "0.1.25"
-    "@gluestack-ui/image" "0.1.16"
-    "@gluestack-ui/input" "0.1.37"
-    "@gluestack-ui/link" "0.1.28"
-    "@gluestack-ui/menu" "0.2.42"
-    "@gluestack-ui/modal" "0.1.40"
-    "@gluestack-ui/overlay" "0.1.21"
-    "@gluestack-ui/popover" "0.1.48"
-    "@gluestack-ui/pressable" "0.1.22"
-    "@gluestack-ui/progress" "0.1.18"
-    "@gluestack-ui/provider" "0.1.18"
-    "@gluestack-ui/radio" "0.1.39"
-    "@gluestack-ui/select" "0.1.31"
-    "@gluestack-ui/slider" "0.1.31"
-    "@gluestack-ui/spinner" "0.1.15"
-    "@gluestack-ui/switch" "0.1.28"
-    "@gluestack-ui/tabs" "0.1.23"
-    "@gluestack-ui/textarea" "0.1.24"
-    "@gluestack-ui/toast" "1.0.9"
-    "@gluestack-ui/tooltip" "0.1.43"
-    "@legendapp/motion" latest
-
-"@gluestack-ui/toast@1.0.9":
-  version "1.0.9"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "^0.1.20"
-    "@gluestack-ui/transitions" "^0.1.11"
-    "@gluestack-ui/utils" "^0.1.14"
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/tooltip@0.1.43":
-  version "0.1.43"
-  dependencies:
-    "@gluestack-ui/hooks" "0.1.13"
-    "@gluestack-ui/overlay" "^0.1.21"
-    "@gluestack-ui/utils" "^0.1.15"
-    "@react-native-aria/focus" "^0.2.9"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/overlays" "^0.3.12"
-
-"@gluestack-ui/transitions@^0.1.11":
-  version "0.1.11"
-  dependencies:
-    "@gluestack-ui/overlay" "^0.1.16"
-    "@gluestack-ui/react-native-aria" "^0.1.6"
-    "@gluestack-ui/utils" "^0.1.14"
-    "@react-native-aria/focus" "^0.2.9"
-
-"@gluestack-ui/utils@^0.1.14", "@gluestack-ui/utils@^0.1.15", "@gluestack-ui/utils@0.1.15":
-  version "0.1.15"
-  dependencies:
-    "@react-native-aria/focus" "^0.2.9"
-
-"@internationalized/date@^3.7.0":
-  version "3.7.0"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-
-"@internationalized/message@^3.1.6":
-  version "3.1.6"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-    intl-messageformat "^10.1.0"
-
-"@internationalized/number@^3.6.0":
-  version "3.6.0"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-
-"@internationalized/string@^3.2.5":
-  version "3.2.5"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
   resolved "https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz"
@@ -1996,14 +1631,6 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@legendapp/motion@>=2.2", "@legendapp/motion@latest":
-  version "2.4.0"
-  dependencies:
-    "@legendapp/tools" "2.0.1"
-
-"@legendapp/tools@2.0.1":
-  version "2.0.1"
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -2036,280 +1663,6 @@
   version "0.11.0"
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
-
-"@react-aria/checkbox@3.2.1":
-  version "3.2.1"
-  dependencies:
-    "@babel/runtime" "^7.6.2"
-    "@react-aria/label" "^3.1.1"
-    "@react-aria/toggle" "^3.1.1"
-    "@react-aria/utils" "^3.3.0"
-    "@react-stately/checkbox" "^3.0.1"
-    "@react-stately/toggle" "^3.2.1"
-    "@react-types/checkbox" "^3.2.1"
-
-"@react-aria/dialog@*":
-  version "3.5.21"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/overlays" "^3.25.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-types/dialog" "^3.5.15"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/focus@^3.19.1", "@react-aria/focus@^3.2.3":
-  version "3.19.1"
-  dependencies:
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-    clsx "^2.0.0"
-
-"@react-aria/form@^3.0.12":
-  version "3.0.12"
-  dependencies:
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-stately/form" "^3.1.1"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/i18n@^3.12.5":
-  version "3.12.5"
-  dependencies:
-    "@internationalized/date" "^3.7.0"
-    "@internationalized/message" "^3.1.6"
-    "@internationalized/number" "^3.6.0"
-    "@internationalized/string" "^3.2.5"
-    "@react-aria/ssr" "^3.9.7"
-    "@react-aria/utils" "^3.27.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/interactions@^3.23.0", "@react-aria/interactions@^3.3.2":
-  version "3.23.0"
-  dependencies:
-    "@react-aria/ssr" "^3.9.7"
-    "@react-aria/utils" "^3.27.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/label@^3.1.1", "@react-aria/label@^3.7.14":
-  version "3.7.14"
-  dependencies:
-    "@react-aria/utils" "^3.27.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/menu@^3.1.3", "@react-aria/menu@^3.14.1":
-  version "3.17.0"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/i18n" "^3.12.5"
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/overlays" "^3.25.0"
-    "@react-aria/selection" "^3.22.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/menu" "^3.9.1"
-    "@react-stately/selection" "^3.19.0"
-    "@react-stately/tree" "^3.8.7"
-    "@react-types/button" "^3.10.2"
-    "@react-types/menu" "^3.9.14"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/overlays@^3.19.0", "@react-aria/overlays@^3.25.0", "@react-aria/overlays@^3.7.0":
-  version "3.25.0"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/i18n" "^3.12.5"
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/ssr" "^3.9.7"
-    "@react-aria/utils" "^3.27.0"
-    "@react-aria/visually-hidden" "^3.8.19"
-    "@react-stately/overlays" "^3.6.13"
-    "@react-types/button" "^3.10.2"
-    "@react-types/overlays" "^3.8.12"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/radio@^3.1.2":
-  version "3.10.11"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/form" "^3.0.12"
-    "@react-aria/i18n" "^3.12.5"
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/label" "^3.7.14"
-    "@react-aria/utils" "^3.27.0"
-    "@react-stately/radio" "^3.10.10"
-    "@react-types/radio" "^3.8.6"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/selection@^3.22.0", "@react-aria/selection@^3.3.1":
-  version "3.22.0"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/i18n" "^3.12.5"
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-stately/selection" "^3.19.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/slider@^3.0.1":
-  version "3.7.15"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/i18n" "^3.12.5"
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/label" "^3.7.14"
-    "@react-aria/utils" "^3.27.0"
-    "@react-stately/slider" "^3.6.1"
-    "@react-types/shared" "^3.27.0"
-    "@react-types/slider" "^3.7.8"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/ssr@^3.0.1", "@react-aria/ssr@^3.9.7":
-  version "3.9.7"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/toggle@^3.1.1":
-  version "3.10.11"
-  dependencies:
-    "@react-aria/focus" "^3.19.1"
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-stately/toggle" "^3.8.1"
-    "@react-types/checkbox" "^3.9.1"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-aria/utils@^3.27.0", "@react-aria/utils@^3.3.0", "@react-aria/utils@^3.6.0":
-  version "3.27.0"
-  dependencies:
-    "@react-aria/ssr" "^3.9.7"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-    clsx "^2.0.0"
-
-"@react-aria/visually-hidden@^3.7.0", "@react-aria/visually-hidden@^3.8.1", "@react-aria/visually-hidden@^3.8.19", "@react-aria/visually-hidden@^3.8.6":
-  version "3.8.19"
-  dependencies:
-    "@react-aria/interactions" "^3.23.0"
-    "@react-aria/utils" "^3.27.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-native-aria/accordion@^0.0.2":
-  version "0.0.2"
-
-"@react-native-aria/checkbox@^0.2.9":
-  version "0.2.9"
-  dependencies:
-    "@react-aria/checkbox" "3.2.1"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/toggle" "^0.2.8"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/toggle" "^3.2.1"
-
-"@react-native-aria/dialog@^0.0.4":
-  version "0.0.4"
-  dependencies:
-    "@react-aria/dialog" "*"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-types/dialog" "*"
-    "@react-types/shared" "*"
-
-"@react-native-aria/focus@^0.2.9":
-  version "0.2.9"
-  dependencies:
-    "@react-aria/focus" "^3.2.3"
-
-"@react-native-aria/interactions@0.2.15":
-  version "0.2.15"
-  dependencies:
-    "@react-aria/interactions" "^3.3.2"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/utils" "0.2.11"
-
-"@react-native-aria/menu@0.2.14":
-  version "0.2.14"
-  dependencies:
-    "@react-aria/interactions" "^3.3.2"
-    "@react-aria/menu" "^3.1.3"
-    "@react-aria/selection" "^3.3.1"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/overlays" "^0.3.12"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/collections" "^3.3.0"
-    "@react-stately/menu" "^3.2.1"
-    "@react-stately/tree" "^3.1.2"
-    "@react-types/menu" "^3.1.1"
-
-"@react-native-aria/overlays@^0.3.12":
-  version "0.3.14"
-  dependencies:
-    "@react-aria/interactions" "^3.3.2"
-    "@react-aria/overlays" "^3.7.0"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/overlays" "^3.1.1"
-    "@react-types/overlays" "^3.4.0"
-    dom-helpers "^5.0.0"
-
-"@react-native-aria/overlays@0.3.14":
-  version "0.3.14"
-  dependencies:
-    "@react-aria/interactions" "^3.3.2"
-    "@react-aria/overlays" "^3.7.0"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/overlays" "^3.1.1"
-    "@react-types/overlays" "^3.4.0"
-    dom-helpers "^5.0.0"
-
-"@react-native-aria/radio@^0.2.12":
-  version "0.2.12"
-  dependencies:
-    "@react-aria/radio" "^3.1.2"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/radio" "^3.2.1"
-    "@react-types/radio" "^3.1.1"
-
-"@react-native-aria/slider@^0.2.11":
-  version "0.2.11"
-  dependencies:
-    "@react-aria/focus" "^3.2.3"
-    "@react-aria/interactions" "^3.3.2"
-    "@react-aria/label" "^3.1.1"
-    "@react-aria/slider" "^3.0.1"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/slider" "^3.0.1"
-
-"@react-native-aria/toggle@^0.2.8":
-  version "0.2.10"
-  dependencies:
-    "@react-aria/focus" "^3.2.3"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/interactions" "0.2.15"
-    "@react-native-aria/utils" "0.2.11"
-    "@react-stately/toggle" "^3.2.1"
-    "@react-types/checkbox" "^3.2.1"
-
-"@react-native-aria/utils@0.2.11":
-  version "0.2.11"
-  dependencies:
-    "@react-aria/ssr" "^3.0.1"
-    "@react-aria/utils" "^3.3.0"
 
 "@react-native/assets-registry@0.76.7":
   version "0.76.7"
@@ -2458,12 +1811,6 @@
   resolved "https://registry.npmjs.org/@react-native/normalize-colors/-/normalize-colors-0.76.7.tgz"
   integrity sha512-ST1xxBuYVIXPdD81dR6+tzIgso7m3pa9+6rOBXTh5Xm7KEEFik7tnQX+GydXYMp3wr1gagJjragdXkPnxK6WNg==
 
-"@react-native/virtualized-lists@^0.72.4":
-  version "0.72.8"
-  dependencies:
-    invariant "^2.2.4"
-    nullthrows "^1.1.1"
-
 "@react-native/virtualized-lists@0.76.7":
   version "0.76.7"
   resolved "https://registry.npmjs.org/@react-native/virtualized-lists/-/virtualized-lists-0.76.7.tgz"
@@ -2517,341 +1864,6 @@
   dependencies:
     "@react-navigation/elements" "^2.2.6"
     color "^4.2.3"
-
-"@react-stately/calendar@^3.7.0":
-  version "3.7.0"
-  dependencies:
-    "@internationalized/date" "^3.7.0"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/calendar" "^3.6.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/checkbox@^3.0.1", "@react-stately/checkbox@^3.4.2", "@react-stately/checkbox@^3.6.11":
-  version "3.6.11"
-  dependencies:
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/checkbox" "^3.9.1"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/collections@^3.12.1", "@react-stately/collections@^3.3.0":
-  version "3.12.1"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/color@^3.8.2":
-  version "3.8.2"
-  dependencies:
-    "@internationalized/number" "^3.6.0"
-    "@internationalized/string" "^3.2.5"
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/numberfield" "^3.9.9"
-    "@react-stately/slider" "^3.6.1"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/color" "^3.0.2"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/combobox@^3.10.2":
-  version "3.10.2"
-  dependencies:
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/list" "^3.11.2"
-    "@react-stately/overlays" "^3.6.13"
-    "@react-stately/select" "^3.6.10"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/combobox" "^3.13.2"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/data@^3.12.1":
-  version "3.12.1"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/datepicker@^3.12.0":
-  version "3.12.0"
-  dependencies:
-    "@internationalized/date" "^3.7.0"
-    "@internationalized/string" "^3.2.5"
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/overlays" "^3.6.13"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/datepicker" "^3.10.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/disclosure@^3.0.1":
-  version "3.0.1"
-  dependencies:
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/dnd@^3.5.1":
-  version "3.5.1"
-  dependencies:
-    "@react-stately/selection" "^3.19.0"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/flags@^3.0.5":
-  version "3.0.5"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/form@^3.1.1":
-  version "3.1.1"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/grid@^3.10.1":
-  version "3.10.1"
-  dependencies:
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/selection" "^3.19.0"
-    "@react-types/grid" "^3.2.11"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/list@^3.11.2":
-  version "3.11.2"
-  dependencies:
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/selection" "^3.19.0"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/menu@^3.2.1", "@react-stately/menu@^3.9.1":
-  version "3.9.1"
-  dependencies:
-    "@react-stately/overlays" "^3.6.13"
-    "@react-types/menu" "^3.9.14"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/numberfield@^3.9.9":
-  version "3.9.9"
-  dependencies:
-    "@internationalized/number" "^3.6.0"
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/numberfield" "^3.8.8"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/overlays@^3.1.1", "@react-stately/overlays@^3.6.13":
-  version "3.6.13"
-  dependencies:
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/overlays" "^3.8.12"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/radio@^3.10.10", "@react-stately/radio@^3.2.1", "@react-stately/radio@^3.8.1":
-  version "3.10.10"
-  dependencies:
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/radio" "^3.8.6"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/searchfield@^3.5.9":
-  version "3.5.9"
-  dependencies:
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/searchfield" "^3.5.11"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/select@^3.6.10":
-  version "3.6.10"
-  dependencies:
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/list" "^3.11.2"
-    "@react-stately/overlays" "^3.6.13"
-    "@react-types/select" "^3.9.9"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/selection@^3.19.0":
-  version "3.19.0"
-  dependencies:
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/slider@^3.0.1", "@react-stately/slider@^3.2.4", "@react-stately/slider@^3.6.1":
-  version "3.6.1"
-  dependencies:
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/shared" "^3.27.0"
-    "@react-types/slider" "^3.7.8"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/table@^3.13.1":
-  version "3.13.1"
-  dependencies:
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/flags" "^3.0.5"
-    "@react-stately/grid" "^3.10.1"
-    "@react-stately/selection" "^3.19.0"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/grid" "^3.2.11"
-    "@react-types/shared" "^3.27.0"
-    "@react-types/table" "^3.10.4"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/tabs@^3.7.1":
-  version "3.7.1"
-  dependencies:
-    "@react-stately/list" "^3.11.2"
-    "@react-types/shared" "^3.27.0"
-    "@react-types/tabs" "^3.3.12"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/toggle@^3.2.1", "@react-stately/toggle@^3.4.4", "@react-stately/toggle@^3.8.1":
-  version "3.8.1"
-  dependencies:
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/checkbox" "^3.9.1"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/tooltip@^3.5.1":
-  version "3.5.1"
-  dependencies:
-    "@react-stately/overlays" "^3.6.13"
-    "@react-types/tooltip" "^3.4.14"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/tree@^3.1.2", "@react-stately/tree@^3.8.7":
-  version "3.8.7"
-  dependencies:
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/selection" "^3.19.0"
-    "@react-stately/utils" "^3.10.5"
-    "@react-types/shared" "^3.27.0"
-    "@swc/helpers" "^0.5.0"
-
-"@react-stately/utils@^3.10.5", "@react-stately/utils@^3.6.0":
-  version "3.10.5"
-  dependencies:
-    "@swc/helpers" "^0.5.0"
-
-"@react-types/button@^3.10.2":
-  version "3.10.2"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/calendar@^3.6.0":
-  version "3.6.0"
-  dependencies:
-    "@internationalized/date" "^3.7.0"
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/checkbox@^3.2.1", "@react-types/checkbox@^3.9.1":
-  version "3.9.1"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/color@^3.0.2":
-  version "3.0.2"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-    "@react-types/slider" "^3.7.8"
-
-"@react-types/combobox@^3.13.2":
-  version "3.13.2"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/datepicker@^3.10.0":
-  version "3.10.0"
-  dependencies:
-    "@internationalized/date" "^3.7.0"
-    "@react-types/calendar" "^3.6.0"
-    "@react-types/overlays" "^3.8.12"
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/dialog@*", "@react-types/dialog@^3.5.15":
-  version "3.5.15"
-  dependencies:
-    "@react-types/overlays" "^3.8.12"
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/grid@^3.2.11":
-  version "3.2.11"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/menu@^3.1.1", "@react-types/menu@^3.9.14":
-  version "3.9.14"
-  dependencies:
-    "@react-types/overlays" "^3.8.12"
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/numberfield@^3.8.8":
-  version "3.8.8"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/overlays@^3.4.0", "@react-types/overlays@^3.8.12":
-  version "3.8.12"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/radio@^3.1.1", "@react-types/radio@^3.8.6":
-  version "3.8.6"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/searchfield@^3.5.11":
-  version "3.5.11"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-    "@react-types/textfield" "^3.11.0"
-
-"@react-types/select@^3.9.9":
-  version "3.9.9"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/shared@*", "@react-types/shared@^3.27.0":
-  version "3.27.0"
-
-"@react-types/slider@^3.7.8":
-  version "3.7.8"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/table@^3.10.4":
-  version "3.10.4"
-  dependencies:
-    "@react-types/grid" "^3.2.11"
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/tabs@^3.3.12":
-  version "3.3.12"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/textfield@^3.11.0":
-  version "3.11.0"
-  dependencies:
-    "@react-types/shared" "^3.27.0"
-
-"@react-types/tooltip@^3.4.14":
-  version "3.4.14"
-  dependencies:
-    "@react-types/overlays" "^3.8.12"
-    "@react-types/shared" "^3.27.0"
 
 "@segment/loosely-validate-event@^2.0.0":
   version "2.0.0"
@@ -2972,13 +1984,6 @@
     deepmerge "^4.3.1"
     svgo "^3.0.2"
 
-"@swc/helpers@^0.5.0":
-  version "0.5.15"
-  resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz"
-  integrity sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==
-  dependencies:
-    tslib "^2.8.0"
-
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz"
@@ -3087,13 +2092,7 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.14.tgz"
   integrity sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==
 
-"@types/react-native@>=0.72":
-  version "0.72.8"
-  dependencies:
-    "@react-native/virtualized-lists" "^0.72.4"
-    "@types/react" "*"
-
-"@types/react@*", "@types/react@^18.2.6", "@types/react@~18.3.12":
+"@types/react@^18.2.6", "@types/react@~18.3.12":
   version "18.3.18"
   resolved "https://registry.npmjs.org/@types/react/-/react-18.3.18.tgz"
   integrity sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ==
@@ -3105,12 +2104,6 @@
   version "2.0.3"
   resolved "https://registry.npmjs.org/@types/stack-utils/-/stack-utils-2.0.3.tgz"
   integrity sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==
-
-"@types/strip-bom@^3.0.0":
-  version "3.0.0"
-
-"@types/strip-json-comments@0.0.30":
-  version "0.0.30"
 
 "@types/yargs-parser@*":
   version "21.0.3"
@@ -3782,9 +2775,6 @@ clone@^1.0.2:
   resolved "https://registry.npmjs.org/clone/-/clone-1.0.4.tgz"
   integrity sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==
 
-clsx@^2.0.0:
-  version "2.1.1"
-
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
@@ -4091,9 +3081,6 @@ debug@2.6.9:
   dependencies:
     ms "2.0.0"
 
-decimal.js@10:
-  version "10.5.0"
-
 decode-uri-component@^0.2.2:
   version "0.2.2"
   resolved "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.2.tgz"
@@ -4184,12 +3171,6 @@ dlv@^1.1.3:
   version "1.1.3"
   resolved "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz"
   integrity sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==
-
-dom-helpers@^5.0.0:
-  version "5.2.1"
-  dependencies:
-    "@babel/runtime" "^7.8.7"
-    csstype "^3.0.2"
 
 dom-serializer@^2.0.0:
   version "2.0.0"
@@ -5116,14 +4097,6 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-intl-messageformat@^10.1.0:
-  version "10.7.15"
-  dependencies:
-    "@formatjs/ecma402-abstract" "2.3.3"
-    "@formatjs/fast-memoize" "2.2.6"
-    "@formatjs/icu-messageformat-parser" "2.11.1"
-    tslib "2"
-
 invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
@@ -5611,6 +4584,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-react-native@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.npmjs.org/lottie-react-native/-/lottie-react-native-7.1.0.tgz"
+  integrity sha512-73jtQySxRZ8KTTSKf6CtcpCt8tpOCw4NRiCST4HTYgXlycxIihIp89jRcK8rS/QiBKl5bzyixMzpVmd4mYVH5Q==
+
 lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/lower-case/-/lower-case-2.0.2.tgz"
@@ -6054,7 +5032,7 @@ nanoid@^3.3.6, nanoid@^3.3.7, nanoid@^3.3.8, nanoid@3.3.8:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz"
   integrity sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==
 
-nativewind@*, nativewind@^4.1.23:
+nativewind@^4.1.23:
   version "4.1.23"
   resolved "https://registry.npmjs.org/nativewind/-/nativewind-4.1.23.tgz"
   integrity sha512-oLX3suGI6ojQqWxdQezOSM5GmJ4KvMnMtmaSMN9Ggb5j7ysFt4nHxb1xs8RDjZR7BWc+bsetNJU8IQdQMHqRpg==
@@ -6124,9 +5102,6 @@ node-releases@^2.0.19:
   version "2.0.19"
   resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.19.tgz"
   integrity sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==
-
-normalize-css-color@^1.0.2:
-  version "1.0.2"
 
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
@@ -6677,7 +5652,7 @@ react-devtools-core@^5.3.1:
     shell-quote "^1.6.1"
     ws "^7"
 
-react-dom@*, "react-dom@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1", react-dom@^18.0.0, react-dom@>=16, react-dom@18.3.1:
+react-dom@^18.0.0, react-dom@18.3.1:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -6779,7 +5754,7 @@ react-native-svg-transformer@^1.5.0:
     "@svgr/plugin-svgo" "^8.1.0"
     path-dirname "^1.0.2"
 
-react-native-svg@^15.11.2, react-native-svg@>=12.0.0, react-native-svg@>=13.4.0:
+react-native-svg@^15.11.2, react-native-svg@>=12.0.0:
   version "15.11.2"
   resolved "https://registry.npmjs.org/react-native-svg/-/react-native-svg-15.11.2.tgz"
   integrity sha512-+YfF72IbWQUKzCIydlijV1fLuBsQNGMT6Da2kFlo1sh+LE3BIm/2Q7AR1zAAR6L0BFLi1WaQPLfFUC9bNZpOmw==
@@ -6788,7 +5763,7 @@ react-native-svg@^15.11.2, react-native-svg@>=12.0.0, react-native-svg@>=13.4.0:
     css-tree "^1.1.3"
     warn-once "0.1.1"
 
-react-native-web@>=0.19, react-native-web@~0.19.13:
+react-native-web@~0.19.13:
   version "0.19.13"
   resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.19.13.tgz"
   integrity sha512-etv3bN8rJglrRCp/uL4p7l8QvUNUC++QwDbdZ8CB7BvZiMvsxfFIRM1j04vxNldG3uo2puRd6OSWR3ibtmc29A==
@@ -6802,7 +5777,7 @@ react-native-web@>=0.19, react-native-web@~0.19.13:
     postcss-value-parser "^4.2.0"
     styleq "^0.1.3"
 
-react-native@*, react-native@>=0.59.0, react-native@>=0.72, react-native@0.76.7:
+react-native@*, react-native@>=0.46, react-native@>=0.59.0, react-native@0.76.7:
   version "0.76.7"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.76.7.tgz"
   integrity sha512-GPJcQeO3qUi1MvuhsC2DC6tH8gJQ4uc4JWPORrdeuCGFWE3QLsN8/hiChTEvJREHLfQSV61YPI8gIOtAQ8c37g==
@@ -6851,36 +5826,7 @@ react-refresh@^0.14.0, react-refresh@^0.14.2:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.2.tgz"
   integrity sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==
 
-react-stately@^3.21.0:
-  version "3.35.0"
-  dependencies:
-    "@react-stately/calendar" "^3.7.0"
-    "@react-stately/checkbox" "^3.6.11"
-    "@react-stately/collections" "^3.12.1"
-    "@react-stately/color" "^3.8.2"
-    "@react-stately/combobox" "^3.10.2"
-    "@react-stately/data" "^3.12.1"
-    "@react-stately/datepicker" "^3.12.0"
-    "@react-stately/disclosure" "^3.0.1"
-    "@react-stately/dnd" "^3.5.1"
-    "@react-stately/form" "^3.1.1"
-    "@react-stately/list" "^3.11.2"
-    "@react-stately/menu" "^3.9.1"
-    "@react-stately/numberfield" "^3.9.9"
-    "@react-stately/overlays" "^3.6.13"
-    "@react-stately/radio" "^3.10.10"
-    "@react-stately/searchfield" "^3.5.9"
-    "@react-stately/select" "^3.6.10"
-    "@react-stately/selection" "^3.19.0"
-    "@react-stately/slider" "^3.6.1"
-    "@react-stately/table" "^3.13.1"
-    "@react-stately/tabs" "^3.7.1"
-    "@react-stately/toggle" "^3.8.1"
-    "@react-stately/tooltip" "^3.5.1"
-    "@react-stately/tree" "^3.8.7"
-    "@react-types/shared" "^3.27.0"
-
-react@*, "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react@^16.8.0 || ^17.0.0-rc.1", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1", react@^18.0.0, react@^18.2.0, react@^18.3.1, "react@>= 18.2.0", react@>=16, react@>=16.8, react@>=17.0.0, react@>=18, react@18.3.1:
+react@*, "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", react@^18.0.0, react@^18.2.0, react@^18.3.1, "react@>= 18.2.0", react@>=16.8, react@>=17.0.0, react@>=18, react@18.3.1:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -7439,11 +6385,6 @@ strip-ansi@^7.0.1:
   dependencies:
     ansi-regex "^6.0.1"
 
-strip-bom@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/strip-bom/-/strip-bom-3.0.0.tgz"
-  integrity sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==
-
 strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/strip-eof/-/strip-eof-1.0.0.tgz"
@@ -7453,9 +6394,6 @@ strip-final-newline@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-2.0.0.tgz"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
-
-strip-json-comments@^2.0.0:
-  version "2.0.1"
 
 strip-json-comments@~2.0.1:
   version "2.0.1"
@@ -7714,15 +6652,7 @@ ts-node@>=9.0.0:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-tsconfig@7:
-  version "7.0.0"
-  dependencies:
-    "@types/strip-bom" "^3.0.0"
-    "@types/strip-json-comments" "0.0.30"
-    strip-bom "^3.0.0"
-    strip-json-comments "^2.0.0"
-
-tslib@^2.0.1, tslib@^2.0.3, tslib@^2.4.0, tslib@^2.8.0, tslib@2:
+tslib@^2.0.1, tslib@^2.0.3, tslib@^2.4.0:
   version "2.8.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
@@ -7747,7 +6677,7 @@ type-fest@^0.7.1:
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.7.1.tgz"
   integrity sha512-Ne2YiiGN8bmrmJJEuTWTLJR32nh/JdL1+PSicowtNb0WFpn59GK8/lfD61bVtzguz7b3PBt74nxpv/Pw5po5Rg==
 
-typescript@^5.3.3, typescript@^5.6.3, typescript@>=2.7, typescript@>=4.9.5, typescript@5.7.3:
+typescript@^5.3.3, typescript@>=2.7, typescript@>=4.9.5, typescript@5.7.3:
   version "5.7.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz"
   integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==
@@ -8079,6 +7009,7 @@ xmlbuilder@~11.0.0:
     expo-localization "~16.0.1"
     expo-splash-screen "~0.29.22"
     expo-status-bar "~2.0.1"
+    lottie-react-native "7.1.0"
     nativewind "^4.1.23"
     react "18.3.1"
     react-dom "18.3.1"

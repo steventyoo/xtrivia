@@ -1,9 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect } from 'react';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamsList } from '@app/navigation/RootStack';
 import Logo from '@app/components/Logo';
+import LottieView from 'lottie-react-native';
 
 const SplashScreen = () => {
 
@@ -17,7 +18,7 @@ const SplashScreen = () => {
     // At the moment, skipping these steps,  just go to next page after 1 sec
     setTimeout(() => {
       navigation.navigate('Auth')
-    }, 1000)
+    }, 2000)
   }
 
   useEffect(() => {
@@ -27,6 +28,14 @@ const SplashScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Logo containerStyle={styles.logoContainer} />
+      <View style={{ flex: 1 }} />
+      <View style={styles.spinnerContainer}>
+        <LottieView
+          autoPlay
+          style={styles.lottieSpinner}
+          source={require('@assets/animations/spinner.json')}
+        />
+      </View>
     </SafeAreaView>
   )
 }
@@ -41,5 +50,13 @@ const styles = StyleSheet.create({
   logoContainer: {
     marginTop: 60,
     alignSelf: 'center'
-  }  
+  },
+  spinnerContainer: {
+    marginBottom: 20,
+    alignSelf: 'center'
+  },
+  lottieSpinner: {
+    width: 200,
+    height: 150
+  }
 })
