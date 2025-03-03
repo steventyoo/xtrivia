@@ -1,7 +1,13 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import AuthScreen from "@app/pages/auth/AuthScreen";
+import RegisterScreen from "@app/pages/auth/RegisterScreen";
 
-const Stack = createStackNavigator();
+export type AuthStackParamsList = {
+  AuthScreen: undefined,
+  RegisterScreen: undefined
+}
+
+const Stack = createStackNavigator<AuthStackParamsList>();
 
 const AuthStack = () => {
   return (
@@ -10,6 +16,7 @@ const AuthStack = () => {
       gestureEnabled: false
     }}>
       <Stack.Screen name="AuthScreen" component={AuthScreen} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
     </Stack.Navigator>
   )
 }

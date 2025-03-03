@@ -2,19 +2,22 @@ import { FontNames } from "@app/theme/fonts";
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import XTriviaLogo from '@images/svgs/x-logo.svg'
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
+import Logo from "@app/components/Logo";
+import { AuthStackParamsList } from "@app/navigation/AuthStack";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
 
 const AuthScreen = () => {
 
+  const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
+
+  const handleSignup = () => {
+    navigation.navigate('RegisterScreen')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.logoContainer}>
-        <XTriviaLogo width={50} height={50} />
-        <Text style={styles.logoText}>
-          trivia
-        </Text>
-      </View>
+      <Logo containerStyle={styles.logoContainer} />
       <Image
         source={require('@assets/images/img-welcome-logo.png')}
         style={styles.welcomeLogoImage}
@@ -31,6 +34,7 @@ const AuthScreen = () => {
       <AuthCTAButton
         type="primary"
         text="sign up"
+        onPress={handleSignup}
         containerStyle={styles.buttonsCommon}
       />
       <AuthCTAButton
@@ -57,14 +61,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     marginTop: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
     alignSelf: 'center'
-  },
-  logoText: {
-    fontFamily: FontNames.Inconsolata,
-    fontSize: 50,
-    marginLeft: 10,
   },
   welcomeLogoImage: {
     width: 125,
