@@ -1,6 +1,6 @@
 import { FontNames } from "@app/theme/fonts";
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TextInput } from "react-native";
+import { StyleSheet, View, Text, TextInput, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
@@ -34,79 +34,83 @@ const RegisterScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Logo containerStyle={styles.logoContainer} iconSize={35} textSize={30} />
-      <Text style={styles.titleText}>
-        log in or create an account
-      </Text>
-      <Text style={styles.subTitleText}>
-        by continuing, you agree to the terms of service, and privacy policy
-      </Text>
-      <View style={styles.inputView}>
-        <Text style={styles.inputCaption}>
-          email address
-        </Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter your email address"
-        />
-      </View>
-      <AuthCTAButton
-        type="primary"
-        text="continue with email"
-        onPress={handleEmail}
-        containerStyle={styles.buttonsCommon}
-      />
-      <View style={styles.dividerView}>
-        <View style={styles.dividerSeparator} />
-        <Text style={styles.dividerText}>
-          or
-        </Text>
-        <View style={styles.dividerSeparator} />
-      </View>
-      <View style={styles.inputView}>
-        <Text style={styles.inputCaption}>
-          phone number
-        </Text>
-        <PhoneInput
-          value={inputValue}
-          defaultCountry="US"
-          onChangePhoneNumber={handleInputValue}
-          selectedCountry={selectedCountry}
-          onChangeSelectedCountry={handleSelectedCountry}
-          phoneInputStyles={{
-            container: styles.phoneInputContainer,
-            flagContainer: styles.phoneInputFlagContainer,
-            callingCode: styles.phoneInputCallingCode,
-            divider: styles.phoneInputDivider,
-            input: styles.phoneInputInput
-          }}
-        />
-      </View>
-      <AuthCTAButton
-        type="primary"
-        text="continue with mobile"
-        onPress={handleMobile}
-        containerStyle={styles.buttonsCommon}
-      />
-      <View style={styles.dividerView}>
-        <View style={styles.dividerSeparator} />
-        <Text style={styles.dividerText}>
-          or
-        </Text>
-        <View style={styles.dividerSeparator} />
-      </View>
-      <AuthCTAButton
-        type="secondary"
-        text="sign in with apple"
-        leftIcon={<AppleLogo width={25} height={25} />}
-        containerStyle={styles.buttonsCommon}
-      />
-      <AuthCTAButton
-        type="secondary"
-        text="sign in with google"
-        leftIcon={<GoogleLogo width={25} height={25} />}
-        containerStyle={styles.buttonsCommon}
-      />
-      <View style={{ height: 60 }} />
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} contentContainerStyle={{}}>
+        <ScrollView>
+          <Text style={styles.titleText}>
+            log in or create an account
+          </Text>
+          <Text style={styles.subTitleText}>
+            by continuing, you agree to the terms of service, and privacy policy
+          </Text>
+          <View style={styles.inputView}>
+            <Text style={styles.inputCaption}>
+              email address
+            </Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your email address"
+            />
+          </View>
+          <AuthCTAButton
+            type="primary"
+            text="continue with email"
+            onPress={handleEmail}
+            containerStyle={styles.buttonsCommon}
+          />
+          <View style={styles.dividerView}>
+            <View style={styles.dividerSeparator} />
+            <Text style={styles.dividerText}>
+              or
+            </Text>
+            <View style={styles.dividerSeparator} />
+          </View>
+          <View style={styles.inputView}>
+            <Text style={styles.inputCaption}>
+              phone number
+            </Text>
+            <PhoneInput
+              value={inputValue}
+              defaultCountry="US"
+              onChangePhoneNumber={handleInputValue}
+              selectedCountry={selectedCountry}
+              onChangeSelectedCountry={handleSelectedCountry}
+              phoneInputStyles={{
+                container: styles.phoneInputContainer,
+                flagContainer: styles.phoneInputFlagContainer,
+                callingCode: styles.phoneInputCallingCode,
+                divider: styles.phoneInputDivider,
+                input: styles.phoneInputInput
+              }}
+            />
+          </View>
+          <AuthCTAButton
+            type="primary"
+            text="continue with mobile"
+            onPress={handleMobile}
+            containerStyle={styles.buttonsCommon}
+          />
+          <View style={styles.dividerView}>
+            <View style={styles.dividerSeparator} />
+            <Text style={styles.dividerText}>
+              or
+            </Text>
+            <View style={styles.dividerSeparator} />
+          </View>
+          <AuthCTAButton
+            type="secondary"
+            text="sign in with apple"
+            leftIcon={<AppleLogo width={25} height={25} />}
+            containerStyle={styles.buttonsCommon}
+          />
+          <AuthCTAButton
+            type="secondary"
+            text="sign in with google"
+            leftIcon={<GoogleLogo width={25} height={25} />}
+            containerStyle={styles.buttonsCommon}
+          />
+          <View style={{ height: 60 }} />
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   )
 }
@@ -144,7 +148,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,
   },
   inputCaption: {
-    fontSize: 12,    
+    fontSize: 12,
   },
   input: {
     marginTop: 5,
