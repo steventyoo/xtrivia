@@ -1,4 +1,4 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { CardStyleInterpolators, createStackNavigator } from "@react-navigation/stack";
 import SplashScreen from "../pages/Splash";
 import AuthStack from "./AuthStack";
 
@@ -16,7 +16,13 @@ const RootStack = () => {
       gestureEnabled: false
     }}>
       <Stack.Screen name="Splash" component={SplashScreen} />
-      <Stack.Screen name="Auth" component={AuthStack} />
+      <Stack.Screen
+        name="Auth"
+        component={AuthStack}
+        options={{
+          cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
+        }}
+      />
     </Stack.Navigator>
   )
 }
