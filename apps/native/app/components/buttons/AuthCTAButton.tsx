@@ -5,28 +5,36 @@ import { StyleSheet, Text, TouchableOpacity, View, ViewStyle } from "react-nativ
 type Props = {
   type?: 'primary' | 'secondary' | 'no-outline',
   onPress?: () => void,
+  disabled?: boolean,
   text: string,
+  textUnderline?: boolean,
   containerStyle?: ViewStyle,
   leftIcon?: ReactElement
 }
 
 const AuthCTAButton: FC<Props> = ({
   type = 'primary',
+  disabled = false,
   onPress,
   text,
+  textUnderline = false,
   leftIcon,
   containerStyle
 }) => {
+
+  const backgroundColor = disabled ? Colors.gray[70] : type === 'primary' ? Colors.blue.primary : type === 'secondary' ? Colors.gray[95] : 'transparent'
+
   return (
     <TouchableOpacity
       onPress={onPress}
+      disabled={disabled}
       style={[
         styles.container,
-        { backgroundColor: type==='primary' ? Colors.blue.primary : type === 'secondary' ? Colors.gray[95] : 'transparent' },
-        containerStyle
+        { backgroundColor },
+        containerStyle,
       ]}
     >
-      <Text style={[styles.text, { color: type === 'primary' ? 'white' : 'black'}]}>
+      <Text style={[styles.text, { color: type === 'primary' ? 'white' : 'black' }, textUnderline ? { textDecorationLine: 'underline' } : {}]}>
         {text}
       </Text>
       {leftIcon && (

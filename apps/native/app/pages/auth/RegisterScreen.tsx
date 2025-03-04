@@ -1,6 +1,6 @@
 import { FontNames } from "@app/theme/fonts";
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TextInput, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
@@ -8,8 +8,12 @@ import { Colors } from "@app/theme/colors";
 import PhoneInput, { ICountry } from "react-native-international-phone-number";
 import AppleLogo from '@assets/images/svgs/icon-apple-logo.svg'
 import GoogleLogo from '@assets/images/svgs/icon-google-logo.svg'
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { AuthStackParamsList } from "@app/navigation/AuthStack";
 
 const RegisterScreen = () => {
+
+  const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
 
   const [selectedCountry, setSelectedCountry] = useState<ICountry | null>();
   const [inputValue, setInputValue] = useState('');
@@ -23,12 +27,8 @@ const RegisterScreen = () => {
   }
 
 
-  const handleEmail = () => {
-
-  }
-
   const handleMobile = () => {
-
+    navigation.navigate('CodeVerificationScreen')
   }
 
   return (
@@ -41,29 +41,7 @@ const RegisterScreen = () => {
           </Text>
           <Text style={styles.subTitleText}>
             by continuing, you agree to the terms of service, and privacy policy
-          </Text>
-          <View style={styles.inputView}>
-            <Text style={styles.inputCaption}>
-              email address
-            </Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your email address"
-            />
-          </View>
-          <AuthCTAButton
-            type="primary"
-            text="continue with email"
-            onPress={handleEmail}
-            containerStyle={styles.buttonsCommon}
-          />
-          <View style={styles.dividerView}>
-            <View style={styles.dividerSeparator} />
-            <Text style={styles.dividerText}>
-              or
-            </Text>
-            <View style={styles.dividerSeparator} />
-          </View>
+          </Text>          
           <View style={styles.inputView}>
             <Text style={styles.inputCaption}>
               phone number
@@ -144,7 +122,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   inputView: {
-    marginTop: 20,
+    marginTop: 30,
     marginHorizontal: 60,
   },
   inputCaption: {

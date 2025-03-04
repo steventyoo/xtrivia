@@ -33,20 +33,15 @@ const AuthScreen = () => {
       <View style={{ flex: 1 }} />
       <AuthCTAButton
         type="primary"
-        text="sign up"
+        text="sign up / log in"
         onPress={handleSignup}
         containerStyle={styles.buttonsCommon}
       />
       <AuthCTAButton
         type="secondary"
-        text="log in"
-        containerStyle={styles.buttonsCommon}
-      />
-      <AuthCTAButton
-        type="no-outline"
         text="play daily challenge"
         containerStyle={styles.buttonsCommon}
-      />
+      />      
       <View style={{ height: 60 }} />
     </SafeAreaView>
   )
