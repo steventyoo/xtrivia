@@ -17,7 +17,8 @@ const SplashScreen = () => {
     // Also, should add Lottie animation to show initial loading spinner while doing above things.
     // At the moment, skipping these steps,  just go to next page after 1 sec
     setTimeout(() => {
-      navigation.navigate('Auth')
+      // navigation.navigate('Auth')
+      navigation.navigate('Main')
     }, 2000)
   }
 

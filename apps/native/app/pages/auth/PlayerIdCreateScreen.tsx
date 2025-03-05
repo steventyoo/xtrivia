@@ -1,6 +1,6 @@
 import { FontNames } from "@app/theme/fonts";
 import React, { useEffect, useState } from "react";
-import { StyleSheet, View, Text, ScrollView, Keyboard, KeyboardEvent, TextInput } from "react-native";
+import { StyleSheet, View, Text, Keyboard, KeyboardEvent, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Logo from "@app/components/Logo";
 import { Colors } from "@app/theme/colors";
