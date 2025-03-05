@@ -6,11 +6,19 @@ import Logo from "@app/components/Logo";
 import { Colors } from "@app/theme/colors";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import SpiritAnimalSelector from "@app/components/templates/SpiritAnimalSelector";
+import { NavigationProp, StackActions, useNavigation } from "@react-navigation/native";
+import { RootStackParamsList } from "@app/navigation/RootStack";
 
 const PlayerIdCreateScreen = () => {
 
+  const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
+
   const [bottomHeight, setBottomHeight] = useState(80)
   const [playerId, setPlayerId] = useState('');
+
+  const handleComplete = () => {
+    navigation.dispatch(StackActions.replace('Main'))
+  }
   
   useEffect(() => {
     function onKeyboardDidShow(e: KeyboardEvent) {
@@ -61,6 +69,7 @@ const PlayerIdCreateScreen = () => {
         <AuthCTAButton
           type="primary"
           text="complete"
+          onPress={handleComplete}
           disabled={playerId.length < 1}
           containerStyle={styles.cta}
         />

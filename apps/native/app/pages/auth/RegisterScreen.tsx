@@ -1,22 +1,25 @@
 import { FontNames } from "@app/theme/fonts";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
 import { Colors } from "@app/theme/colors";
-import PhoneInput, { ICountry } from "react-native-international-phone-number";
+import PhoneInput, { ICountry, isValidPhoneNumber } from "react-native-international-phone-number";
 import AppleLogo from '@assets/images/svgs/icon-apple-logo.svg'
 import GoogleLogo from '@assets/images/svgs/icon-google-logo.svg'
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { AuthStackParamsList } from "@app/navigation/AuthStack";
+import { supabase } from "@app/services/supabase";
 
 const RegisterScreen = () => {
 
   const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
 
-  const [selectedCountry, setSelectedCountry] = useState<ICountry | null>();
+  const [selectedCountry, setSelectedCountry] = useState<ICountry | null>(null);
   const [inputValue, setInputValue] = useState('');
+
+  const [processingPhoneAuth, setProcessingPhoneAuth] = useState(false)
 
   const handleInputValue = (phoneNumber: string) => {
     setInputValue(phoneNumber);
@@ -26,10 +29,28 @@ const RegisterScreen = () => {
     setSelectedCountry(country);
   }
 
+  const handleMobile = async () => {
 
-  const handleMobile = () => {
-    navigation.navigate('CodeVerificationScreen')
+    setProcessingPhoneAuth(true)
+    const phone = `${selectedCountry?.callingCode} ${inputValue}`
+    const { error } = await supabase.auth.signInWithOtp({ phone })
+
+    setProcessingPhoneAuth(false)
+    if (error) {
+      console.error('Error sending OTP:', error.message);
+    } else {
+      navigation.navigate('CodeVerificationScreen', { phone })
+    }
   }
+
+  const canAuthByPhone = useMemo(() => {
+    if (selectedCountry) {
+      return isValidPhoneNumber(inputValue, selectedCountry)
+    } else {
+      return false
+    }    
+  }, [selectedCountry, inputValue])
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -64,6 +85,8 @@ const RegisterScreen = () => {
           <AuthCTAButton
             type="primary"
             text="continue with mobile"
+            disabled={!canAuthByPhone}
+            loading={processingPhoneAuth}
             onPress={handleMobile}
             containerStyle={styles.buttonsCommon}
           />

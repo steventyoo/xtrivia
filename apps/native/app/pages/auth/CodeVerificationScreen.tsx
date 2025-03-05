@@ -11,26 +11,48 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { NavigationProp, RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { AuthStackParamsList } from "@app/navigation/AuthStack";
+import { supabase } from "@app/services/supabase";
 
 const CELL_COUNT = 6
 
 const CodeVerificationScreen = () => {
 
   const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
+  const route = useRoute<RouteProp<AuthStackParamsList, 'CodeVerificationScreen'>>()
 
   const [bottomHeight, setBottomHeight] = useState(80)
+  const [verifyProcessing, setVerifyProcessing] = useState(false)
+  const [verifyError, setVerifyError] = useState('')
 
-  const [value, setValue] = useState('');
-  const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
+  const [code, setCode] = useState('');
+  const ref = useBlurOnFulfill({value: code, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
-    value,
-    setValue,
+    value: code,
+    setValue:setCode,
   });
 
-  const handleContinue = () => {
-    navigation.navigate('PlayerIdCreateScreen')
+  const handleContinue = async () => {
+
+    setVerifyError('')
+
+    setVerifyProcessing(true)
+    const { error, data } = await supabase.auth.verifyOtp({
+      phone: route.params.phone,
+      token: code,
+      type: 'sms',
+    });
+  
+    setVerifyProcessing(false)
+    if (error) {
+      console.log('Error verifying OTP:', error.message);
+      setVerifyError('Invalid code')
+      setCode('')
+    } else {
+      console.log('User signed in:', data);
+      navigation.navigate('PlayerIdCreateScreen')
+    }
   }
 
   useEffect(() => {
@@ -64,8 +86,8 @@ const CodeVerificationScreen = () => {
         <CodeField
           ref={ref}
           {...props}
-          value={value}
-          onChangeText={setValue}
+          value={code}
+          onChangeText={setCode}
           cellCount={CELL_COUNT}
           rootStyle={styles.codeFieldRoot}
           keyboardType="number-pad"
@@ -81,7 +103,12 @@ const CodeVerificationScreen = () => {
             </View>
 
           )}
-        />          
+        />
+        {!!verifyError && (
+          <Text style={styles.errorText}>
+            {verifyError}
+          </Text>       
+        )}           
       </View>
       <View style={{...styles.actionView, bottom: bottomHeight}}>
         <AuthCTAButton
@@ -93,7 +120,8 @@ const CodeVerificationScreen = () => {
           type="primary"
           text="continue"
           onPress={handleContinue}
-          disabled={value.length < 6}
+          loading={verifyProcessing}
+          disabled={code.length < 6}
           containerStyle={styles.cta}
         />
       </View>
@@ -132,6 +160,16 @@ const styles = StyleSheet.create({
   inputView: {
     marginTop: 30,
     marginHorizontal: 60,    
+  },
+  errorText: {
+    fontFamily: FontNames.Inconsolata,
+    fontSize: 16,
+    marginHorizontal: 60,
+    marginTop: 20,
+    color: 'red',
+    alignSelf: 'center',
+    textAlign: 'center',
+    lineHeight: 18,
   },
   codeFieldRoot: {
     marginTop: 30,

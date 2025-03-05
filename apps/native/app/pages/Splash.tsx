@@ -1,30 +1,26 @@
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect } from 'react';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
 import { RootStackParamsList } from '@app/navigation/RootStack';
 import Logo from '@app/components/Logo';
 import LottieView from 'lottie-react-native';
+import { useAuth } from '@app/hooks/AuthProvider';
 
 const SplashScreen = () => {
 
   const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
-
-  const goNext = () => {
-
-    // TODO:
-    // Initializing processes, such as initial data loading, local storage and database cleaning codes should be here
-    // Also, should add Lottie animation to show initial loading spinner while doing above things.
-    // At the moment, skipping these steps,  just go to next page after 1 sec
-    setTimeout(() => {
-      // navigation.navigate('Auth')
-      navigation.navigate('Main')
-    }, 2000)
-  }
+  const { initialized, session } = useAuth()
 
   useEffect(() => {
-    goNext()
-  }, [])
+    if (initialized) {
+      if (session) {
+        navigation.dispatch(StackActions.replace('Main'))
+      } else {
+        navigation.dispatch(StackActions.replace('Auth'))
+      }      
+    }    
+  }, [initialized])
 
   return (
     <SafeAreaView style={styles.container}>

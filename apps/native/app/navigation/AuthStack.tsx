@@ -7,7 +7,7 @@ import PlayerIdCreateScreen from "@app/pages/auth/PlayerIdCreateScreen";
 export type AuthStackParamsList = {
   AuthScreen: undefined,
   RegisterScreen: undefined,
-  CodeVerificationScreen: undefined,
+  CodeVerificationScreen: { phone: string },
   PlayerIdCreateScreen: undefined
 }
 
