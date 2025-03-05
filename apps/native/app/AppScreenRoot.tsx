@@ -12,6 +12,7 @@ export default function AppScreenRoot() {
   const [loaded, error] = useFonts({
     [FontNames.InconsolataBold]: require('@assets/fonts/Inconsolata-Bold.ttf'),
     [FontNames.Inconsolata]: require('@assets/fonts/Inconsolata-Regular.ttf'),
+    "TwemojiMozilla": require('@assets/fonts/TwemojiMozilla.ttf'),
   });
 
   useEffect(() => {

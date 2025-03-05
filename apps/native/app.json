@@ -28,7 +28,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -40,7 +41,8 @@
         {
           "fonts": [
             "./assets/fonts/Inconsolata-Bold.ttf",
-            "./assets/fonts/Inconsolata-Regular.ttf"
+            "./assets/fonts/Inconsolata-Regular.ttf",
+            "./assets/fonts/TwemojiMozilla.ttf"
           ]
         }
       ],

@@ -1,32 +1,37 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import XTriviaLogo from '@images/svgs/x-logo.svg'
-import { FontNames } from '@app/theme/fonts';
 import { useEffect } from 'react';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
 import { RootStackParamsList } from '@app/navigation/RootStack';
+import Logo from '@app/components/Logo';
+import LottieView from 'lottie-react-native';
+import { useAuth } from '@app/hooks/AuthProvider';
 
 const SplashScreen = () => {
 
   const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
-
-  const goNext = () => {
-    setTimeout(() => {
-      navigation.navigate('Auth')
-    }, 1000)
-  }
+  const { initialized, session } = useAuth()
 
   useEffect(() => {
-    goNext()
-  }, [])
+    if (initialized) {
+      if (session) {
+        navigation.dispatch(StackActions.replace('Main'))
+      } else {
+        navigation.dispatch(StackActions.replace('Auth'))
+      }      
+    }    
+  }, [initialized])
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.logoContainer}>
-        <XTriviaLogo width={50} height={50} />
-        <Text style={styles.logoText}>
-          trivia
-        </Text>
+      <Logo containerStyle={styles.logoContainer} />
+      <View style={{ flex: 1 }} />
+      <View style={styles.spinnerContainer}>
+        <LottieView
+          autoPlay
+          style={styles.lottieSpinner}
+          source={require('@assets/animations/spinner.json')}
+        />
       </View>
     </SafeAreaView>
   )
@@ -41,13 +46,14 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     marginTop: 60,
-    flexDirection: 'row',
-    alignItems: 'center',
     alignSelf: 'center'
   },
-  logoText: {
-    fontFamily: FontNames.Inconsolata,
-    fontSize: 50,
-    marginLeft: 10,
+  spinnerContainer: {
+    marginBottom: 20,
+    alignSelf: 'center'
+  },
+  lottieSpinner: {
+    width: 200,
+    height: 150
   }
 })
