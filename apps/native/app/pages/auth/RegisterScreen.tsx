@@ -1,6 +1,6 @@
 import { FontNames } from "@app/theme/fonts";
 import React, { useMemo, useState } from "react";
-import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { StyleSheet, View, KeyboardAvoidingView, Platform, ScrollView, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
@@ -57,16 +57,17 @@ const RegisterScreen = () => {
       <Logo containerStyle={styles.logoContainer} iconSize={35} textSize={30} />
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} contentContainerStyle={{}}>
         <ScrollView>
-          <Text style={styles.titleText}>
+          {/* <Text style={styles.titleText}> */}
+          <Text>
             log in or create an account
           </Text>
-          <Text style={styles.subTitleText}>
+          {/* <Text style={styles.subTitleText}>
             by continuing, you agree to the terms of service, and privacy policy
-          </Text>          
+          </Text>           */}
           <View style={styles.inputView}>
-            <Text style={styles.inputCaption}>
+            {/* <Text style={styles.inputCaption}>
               phone number
-            </Text>
+            </Text> */}
             <PhoneInput
               value={inputValue}
               defaultCountry="US"
@@ -92,9 +93,9 @@ const RegisterScreen = () => {
           />
           <View style={styles.dividerView}>
             <View style={styles.dividerSeparator} />
-            <Text style={styles.dividerText}>
+            {/* <Text style={styles.dividerText}>
               or
-            </Text>
+            </Text> */}
             <View style={styles.dividerSeparator} />
           </View>
           <AuthCTAButton

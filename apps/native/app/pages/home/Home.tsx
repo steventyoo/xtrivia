@@ -17,7 +17,7 @@ const HomeScreen = () => {
     } else {
       navigation.dispatch(StackActions.replace('Auth'))
       console.log('User signed out successfully');
-    }    
+    }
   }
 
   return (
