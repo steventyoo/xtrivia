@@ -33,7 +33,7 @@ const RegisterScreen = () => {
 
     setProcessingPhoneAuth(true)
     const phone = `${selectedCountry?.callingCode} ${inputValue}`
-    const { error } = await supabase.auth.signInWithOtp({ phone })
+    const { error } = await supabase.auth.signInWithOtp({ phone: phone.replace(/\s+/g, '') })
 
     setProcessingPhoneAuth(false)
     if (error) {
