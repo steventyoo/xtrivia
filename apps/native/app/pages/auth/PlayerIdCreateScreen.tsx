@@ -32,7 +32,7 @@ const PlayerIdCreateScreen = () => {
       .upsert(
         [{ id: authUserId, username: playerId, avatar: selectedSpiritAnimal }],
         { onConflict: 'id' }
-      );
+      ).select();
 
     setProcessing(false)
 
@@ -43,7 +43,8 @@ const PlayerIdCreateScreen = () => {
         setPlayerIdError(error.message)
       }      
     } else {
-      updateAuthProfile?.(data)
+      console.log(data)
+      updateAuthProfile?.(data[0])
       navigation.dispatch(StackActions.replace('Main'))
     }
   }
