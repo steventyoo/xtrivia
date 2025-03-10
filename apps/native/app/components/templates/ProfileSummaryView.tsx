@@ -6,17 +6,19 @@ import { Image, Pressable, StyleSheet, Text, View, ViewStyle } from 'react-nativ
 import XLogo from '@assets/images/svgs/x-logo.svg'
 
 type Props = {
-  containerStyle?: ViewStyle
+  containerStyle?: ViewStyle,
+  onProfilePress?: () =>  void
 }
 
 const ProfileSummaryView: FC<Props> = ({
-  containerStyle
+  containerStyle,
+  onProfilePress
 }) => {
 
   const { authProfile } = useAuth()
 
   return (
-    <Pressable style={{...styles.container, ...containerStyle}}>
+    <Pressable onPress={onProfilePress} style={{...styles.container, ...containerStyle}}>
       {(authProfile?.avatar === 'dog' || authProfile?.avatar === 'cat' || authProfile?.avatar === 'mouse') ? (
         <Image
           source={animals.find(animal => animal.slug === authProfile.avatar)?.image}

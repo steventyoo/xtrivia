@@ -14,6 +14,7 @@ import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import { NavigationProp, RouteProp, StackActions, useNavigation, useRoute } from "@react-navigation/native";
 import { AuthStackParamsList } from "@app/navigation/AuthStack";
 import { supabase } from "@app/services/supabase";
+import { useAuth } from "@app/hooks/AuthProvider";
 
 const CELL_COUNT = 6
 
@@ -21,6 +22,8 @@ const CodeVerificationScreen = () => {
 
   const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
   const route = useRoute<RouteProp<AuthStackParamsList, 'CodeVerificationScreen'>>()
+
+  const { updateAuthProfile } = useAuth()
 
   const [bottomHeight, setBottomHeight] = useState(80)
   const [verifyProcessing, setVerifyProcessing] = useState(false)
@@ -60,6 +63,7 @@ const CodeVerificationScreen = () => {
           navigation.navigate('PlayerIdCreateScreen')
         } else {
           if (profile.username && profile.avatar) {
+            updateAuthProfile?.(profile)
             navigation.dispatch(StackActions.replace('Main'))
           } else {
             navigation.navigate('PlayerIdCreateScreen')

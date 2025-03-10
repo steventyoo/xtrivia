@@ -7,30 +7,21 @@ import { RootStackParamsList } from '@app/navigation/RootStack';
 import { supabase } from '@app/services/supabase';
 import ProfileSummaryView from '@app/components/templates/ProfileSummaryView';
 import HomeButtonsCarousel from '@app/components/templates/HomeButtonsCarousel';
+import TopBar from '@app/components/templates/TopBar';
+import { HomeStackParamsList } from '@app/navigation/HomeStack';
 
 const HomeScreen = () => {
 
-  const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
+  const navigation = useNavigation<NavigationProp<HomeStackParamsList>>()
 
-  const handleSignout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      console.error('Error signing out:', error.message);
-    } else {
-      navigation.dispatch(StackActions.replace('Auth'))
-      console.log('User signed out successfully');
-    }    
+  const handleNavigateToProfile = () => {
+    navigation.navigate('ProfileScreen')
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <ProfileSummaryView containerStyle={styles.homeProfilePanel}/>
+      <TopBar onProfilePress={handleNavigateToProfile} />
       <HomeButtonsCarousel containerStyle={styles.carousel} />
-      <TouchableOpacity onPress={handleSignout}>
-        <Text style={{ alignSelf: 'center', marginTop: 30 }}>
-          Sign out
-        </Text>
-      </TouchableOpacity>
     </SafeAreaView>
   )
 }
@@ -51,10 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginTop: 30,
     alignSelf: 'center'
-  },
-  homeProfilePanel: {
-    marginLeft: 20
-  },
+  },  
   carousel: {
     alignSelf: 'center',
     marginTop: 80,

@@ -19,6 +19,7 @@ const PlayerIdCreateScreen = () => {
 
   const [bottomHeight, setBottomHeight] = useState(80)
   const [playerId, setPlayerId] = useState('');
+  const [playerIdError, setPlayerIdError] = useState('');
   const [selectedSpiritAnimal, setSelectedSpiritAnimal] = useState('dog')
   const [processing, setProcessing] = useState(false)
 
@@ -35,14 +36,36 @@ const PlayerIdCreateScreen = () => {
 
     setProcessing(false)
 
-    if (error) {      
-      console.error('Upsert error:', error);
-      return null;
+    if (error) {
+      if (error.code === '23505') {
+        setPlayerIdError('duplicated player id')
+      } else {
+        setPlayerIdError(error.message)
+      }      
     } else {
       updateAuthProfile?.(data)
       navigation.dispatch(StackActions.replace('Main'))
     }
   }
+
+  useEffect(() => {
+    if (playerId === "") {
+      setPlayerIdError("")
+    } else {
+      if (playerId.length < 3) {
+        setPlayerIdError('player Id should be at least 3 characters length.')
+      } else if (playerId.length > 15) {
+        setPlayerIdError('player Id should be 15 characters at maximum.')
+      } else {
+        const regex = /[^a-zA-Z0-9]/
+        if (regex.test(playerId)) {
+          setPlayerIdError('only letters and numbers, please')
+        } else {
+          setPlayerIdError('')
+        }
+      }
+    }
+  }, [playerId])
   
   useEffect(() => {
     function onKeyboardDidShow(e: KeyboardEvent) {
@@ -80,7 +103,12 @@ const PlayerIdCreateScreen = () => {
             style={styles.input}
             value={playerId}
             onChangeText={setPlayerId}
-          />          
+          />
+          {!!playerIdError && (
+            <Text style={styles.inputError}>
+              {playerIdError}
+            </Text>
+          )}          
         </View>
         <View style={styles.inputView}>
           <Text style={styles.inputCaption}>
@@ -97,7 +125,7 @@ const PlayerIdCreateScreen = () => {
           type="primary"
           text="complete"
           onPress={handleComplete}
-          disabled={playerId.length < 1}
+          disabled={playerId.length < 1 || !!playerIdError}
           loading={processing}
           containerStyle={styles.cta}
         />
@@ -141,6 +169,10 @@ const styles = StyleSheet.create({
   inputCaption: {
     fontSize: 12,
     color: 'black'
+  },
+  inputError: {
+    fontSize: 12,
+    color: 'red'
   },
   input: {
     marginTop: 5,

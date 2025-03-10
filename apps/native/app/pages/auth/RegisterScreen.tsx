@@ -1,6 +1,6 @@
 import { FontNames } from "@app/theme/fonts";
 import React, { useMemo, useState } from "react";
-import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
@@ -33,12 +33,12 @@ const RegisterScreen = () => {
 
     setProcessingPhoneAuth(true)
     const phone = `${selectedCountry?.callingCode} ${inputValue}`
-    const { error } = await supabase.auth.signInWithOtp({ phone: '12345678901' })
+    const { error } = await supabase.auth.signInWithOtp({ phone: phone.replace(/\s+/g, '') })
 
     setProcessingPhoneAuth(false)
     if (error) {
-      console.error('Error sending OTP:', JSON.stringify(error));
-      console.error('Error sending OTP:', error.message);
+      console.log('Error sending OTP:', error.message);
+      Alert.prompt('SMS Failed', "Sorry, we are unable to use your phone number to authorize", [{ text: 'Ok' }])      
     } else {
       navigation.navigate('CodeVerificationScreen', { phone })
     }
