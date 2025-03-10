@@ -33,10 +33,11 @@ const RegisterScreen = () => {
 
     setProcessingPhoneAuth(true)
     const phone = `${selectedCountry?.callingCode} ${inputValue}`
-    const { error } = await supabase.auth.signInWithOtp({ phone })
+    const { error } = await supabase.auth.signInWithOtp({ phone: '12345678901' })
 
     setProcessingPhoneAuth(false)
     if (error) {
+      console.error('Error sending OTP:', JSON.stringify(error));
       console.error('Error sending OTP:', error.message);
     } else {
       navigation.navigate('CodeVerificationScreen', { phone })

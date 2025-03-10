@@ -5,6 +5,8 @@ import { FontNames } from '@app/theme/fonts';
 import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
 import { RootStackParamsList } from '@app/navigation/RootStack';
 import { supabase } from '@app/services/supabase';
+import ProfileSummaryView from '@app/components/templates/ProfileSummaryView';
+import HomeButtonsCarousel from '@app/components/templates/HomeButtonsCarousel';
 
 const HomeScreen = () => {
 
@@ -22,11 +24,8 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Logo containerStyle={styles.logoContainer} />
-      <Text style={styles.title}>
-        home screen
-      </Text>
-
+      <ProfileSummaryView containerStyle={styles.homeProfilePanel}/>
+      <HomeButtonsCarousel containerStyle={styles.carousel} />
       <TouchableOpacity onPress={handleSignout}>
         <Text style={{ alignSelf: 'center', marginTop: 30 }}>
           Sign out
@@ -52,5 +51,12 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginTop: 30,
     alignSelf: 'center'
+  },
+  homeProfilePanel: {
+    marginLeft: 20
+  },
+  carousel: {
+    alignSelf: 'center',
+    marginTop: 80,
   }
 })

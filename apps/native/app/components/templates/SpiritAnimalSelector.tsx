@@ -1,26 +1,14 @@
+import { animals } from '@app/models/BusinessConstants';
 import { Colors } from '@app/theme/colors'
 import React, { FC, useState } from 'react'
-import { Image, ImageProps, Pressable, StyleSheet, View, ViewStyle } from 'react-native'
+import { Image, Pressable, StyleSheet, View, ViewStyle } from 'react-native'
 
 type Props = {
   containerStyle?: ViewStyle;
   onAnimalSelected?: (slug: string) => void;
 }
 
-const animals: {slug: string, image: ImageProps}[] = [
-  {
-    slug: 'dog',
-    image: require('@assets/images/img-spirit-animal-1.png')
-  },
-  {
-    slug: 'cat',
-    image: require('@assets/images/img-spirit-animal-2.png')
-  },
-  {
-    slug: 'mouse',
-    image: require('@assets/images/img-spirit-animal-3.png')
-  }
-]
+
 
 const SpiritAnimalSelector: FC<Props> = ({
   containerStyle,

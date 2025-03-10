@@ -8,16 +8,40 @@ import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import SpiritAnimalSelector from "@app/components/templates/SpiritAnimalSelector";
 import { NavigationProp, StackActions, useNavigation } from "@react-navigation/native";
 import { RootStackParamsList } from "@app/navigation/RootStack";
+import { useAuth } from "@app/hooks/AuthProvider";
+import { supabase } from "@app/services/supabase";
 
 const PlayerIdCreateScreen = () => {
+
+  const { authUserId, updateAuthProfile } = useAuth()
 
   const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
 
   const [bottomHeight, setBottomHeight] = useState(80)
   const [playerId, setPlayerId] = useState('');
+  const [selectedSpiritAnimal, setSelectedSpiritAnimal] = useState('dog')
+  const [processing, setProcessing] = useState(false)
 
-  const handleComplete = () => {
-    navigation.dispatch(StackActions.replace('Main'))
+  const handleComplete = async () => {
+
+    setProcessing(true)
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .upsert(
+        [{ id: authUserId, username: playerId, avatar: selectedSpiritAnimal }],
+        { onConflict: 'id' }
+      );
+
+    setProcessing(false)
+
+    if (error) {      
+      console.error('Upsert error:', error);
+      return null;
+    } else {
+      updateAuthProfile?.(data)
+      navigation.dispatch(StackActions.replace('Main'))
+    }
   }
   
   useEffect(() => {
@@ -62,7 +86,10 @@ const PlayerIdCreateScreen = () => {
           <Text style={styles.inputCaption}>
             select your spirit animal
           </Text>
-          <SpiritAnimalSelector containerStyle={{ marginTop: 10 }}/>            
+          <SpiritAnimalSelector
+            containerStyle={{ marginTop: 10 }}
+            onAnimalSelected={setSelectedSpiritAnimal}
+          />
         </View>              
       </View>
       <View style={{...styles.actionView, bottom: bottomHeight}}>
@@ -71,6 +98,7 @@ const PlayerIdCreateScreen = () => {
           text="complete"
           onPress={handleComplete}
           disabled={playerId.length < 1}
+          loading={processing}
           containerStyle={styles.cta}
         />
       </View>

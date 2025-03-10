@@ -11,7 +11,7 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
-import { NavigationProp, RouteProp, useNavigation, useRoute } from "@react-navigation/native";
+import { NavigationProp, RouteProp, StackActions, useNavigation, useRoute } from "@react-navigation/native";
 import { AuthStackParamsList } from "@app/navigation/AuthStack";
 import { supabase } from "@app/services/supabase";
 
@@ -38,20 +38,40 @@ const CodeVerificationScreen = () => {
     setVerifyError('')
 
     setVerifyProcessing(true)
-    const { error, data } = await supabase.auth.verifyOtp({
+    const { error, data: { user } } = await supabase.auth.verifyOtp({
       phone: route.params.phone,
       token: code,
       type: 'sms',
     });
   
-    setVerifyProcessing(false)
     if (error) {
-      console.log('Error verifying OTP:', error.message);
+      setVerifyProcessing(false)
       setVerifyError('Invalid code')
       setCode('')
     } else {
-      console.log('User signed in:', data);
-      navigation.navigate('PlayerIdCreateScreen')
+      if (user) {
+        const { data: profile, error: profileError } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single();
+
+        if (profileError || !profile) {
+          navigation.navigate('PlayerIdCreateScreen')
+        } else {
+          if (profile.username && profile.avatar) {
+            navigation.dispatch(StackActions.replace('Main'))
+          } else {
+            navigation.navigate('PlayerIdCreateScreen')
+          }
+        }
+      } else {
+        setVerifyProcessing(false)
+        setVerifyError('Unknown error happened')
+        setCode('')
+      }
+
+      
     }
   }
 
