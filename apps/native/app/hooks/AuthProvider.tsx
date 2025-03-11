@@ -32,21 +32,67 @@ export const AuthContextProvider = ({ children }: {children: ReactElement}) => {
   
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session)
 
-      if (session?.user) {
-         supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', session.user.id)
-            .single()
-            .then(({ data }) => {
-              setProfile(data)
+      if (session) {
+        
+
+        const currentTime = Math.floor(Date.now() / 1000); // in seconds
+        const isExpired = (session.expires_at ?? 0) < currentTime;
+
+        console.log("session exists", currentTime, (session.expires_at ?? 0), isExpired)
+
+        if (isExpired) {
+          console.log("JWT token expired.")
+
+          supabase.auth.refreshSession().then(({data: refreshedSession, error: refreshError}) => {
+            if (refreshedSession) {
+              setSession(session)
+              if (refreshedSession.user) {
+                supabase
+                    .from('profiles')
+                    .select('*')
+                    .eq('id', refreshedSession.user.id)
+                    .single()
+                    .then(({ data }) => {
+                      console.log("profile data loaded ", data)
+                      setProfile(data)
+                      setInitialzied(true)
+                    })
+              } else {
+                setSession(null)
+                setInitialzied(true)
+              }
+            } else {
               setInitialzied(true)
-            })
+              setSession(null)
+            }
+          })
+          
+        } else {
+          setSession(session)
+          if (session.user) {
+             supabase
+                .from('profiles')
+                .select('*')
+                .eq('id', session.user.id)
+                .single()
+                .then(({ data }) => {
+                  console.log("profile data loaded ", data)
+                  setProfile(data)
+                  setInitialzied(true)
+                })
+          } else {
+            setInitialzied(true)
+          }
+        }
+
+        
       } else {
+        setSession(null)
         setInitialzied(true)
       }
+
+      
     })
 
     const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {

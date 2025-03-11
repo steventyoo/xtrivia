@@ -5,13 +5,19 @@ import IconXLogo from '@assets/images/svgs/x-logo.svg'
 import { Colors } from '@app/theme/colors'
 import { Categories } from '@app/models/BusinessConstants'
 
-const scoresForCategories: {[key: string]: number} = {
+const scoresForCategories: { [key: string]: number } = {
   general: 8.52,
-  economy: 7.21,
+  tech_science: 3,
   sports: 9.21,
   history: 9.42,
-  tech_science: 3,
-  food_drinks: 5.6
+  geography: 0,
+  music_media: 5.43,
+  economy: 2,
+  music_movies: 0,
+  animals: 3.2,
+  food_drink: 3,
+  pop_culture: 1,
+  dark_mode: 2,
 }
 
 
@@ -35,7 +41,7 @@ const ProfileStats = () => {
   useEffect(() => {
     if (scoreContainerWidth > 0) {
       startScoreAnimation()
-    }    
+    }
   }, [scoreContainerWidth, myPoints])
 
   useEffect(() => {
@@ -70,41 +76,44 @@ const ProfileStats = () => {
         <Text style={styles.categoryText}>
           category ratings
         </Text>
-        {Categories.map(category => {
-          const IconComponent = category.icon
-          return (
-            <View style={styles.categoryItem} key={category.slug}>
+        {Object.keys(scoresForCategories).map(categorySlug => {
+          const category = Categories.find(cat => cat.slug === categorySlug)
+          if (category) {
+            const IconComponent = category.icon
+            return (<View style={styles.categoryItem} key={category.slug}>
               <IconComponent width={25} height={25} />
               <View style={styles.pointsContainer}>
                 <View style={[styles.categoryPointsView, { width: `${(scoresForCategories[category.slug] ?? 0) * 9 + 10}%` }]} />
-                <Text style={{...styles.categoryText, marginLeft: 10}}>
+                <Text style={{ ...styles.categoryText, marginLeft: 10 }}>
                   {category.text}
                 </Text>
               </View>
               <Text style={styles.categoryText}>
-                {scoresForCategories[category.slug] ?? 0}
+                {(scoresForCategories[category.slug] ?? 0).toFixed(2)}
               </Text>
-            </View>
-          )}
-        )}
+            </View>)
+          } else {
+            return null
+          }
+        })}
       </View>
       <View style={styles.streakView}>
         <View style={styles.categoryItem}>
-            <Image source={require('@assets/images/img-current-streak.png')} resizeMode='contain' style={styles.itemImage}/>
-            <View style={styles.pointsContainer}>
-              <Text style={{...styles.categoryText, marginLeft: 10}}>
-                current streak: 12 games
-              </Text>
-            </View>            
+          <Image source={require('@assets/images/img-current-streak.png')} resizeMode='contain' style={styles.itemImage} />
+          <View style={styles.pointsContainer}>
+            <Text style={{ ...styles.categoryText, marginLeft: 10 }}>
+              current streak: 12 games
+            </Text>
           </View>
-          <View style={styles.categoryItem}>
-            <Image source={require('@assets/images/img-max-streak.png')} resizeMode='contain' style={styles.itemImage}/>
-            <View style={styles.pointsContainer}>
-              <Text style={{...styles.categoryText, marginLeft: 10}}>
-                max streak: 91 games
-              </Text>
-            </View>            
+        </View>
+        <View style={styles.categoryItem}>
+          <Image source={require('@assets/images/img-max-streak.png')} resizeMode='contain' style={styles.itemImage} />
+          <View style={styles.pointsContainer}>
+            <Text style={{ ...styles.categoryText, marginLeft: 10 }}>
+              max streak: 91 games
+            </Text>
           </View>
+        </View>
       </View>
     </ScrollView>
   )

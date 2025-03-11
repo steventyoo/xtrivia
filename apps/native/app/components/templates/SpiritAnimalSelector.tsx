@@ -27,11 +27,14 @@ const SpiritAnimalSelector: FC<Props> = ({
 
   return (
     <View style={[styles.container, containerStyle]}>
-      {animals.map(animal => (
-        <Pressable onPress={() => handleItemPress(animal.slug)} key={animal.slug} style={[styles.animalItemContainer, selectedItemSlug === animal.slug ? { backgroundColor: Colors.yellow[100] } : null]}>
-          <Image source={animal.image} style={styles.animalItemImage} resizeMode='contain' />
-        </Pressable>
-      ))}
+      {animals.map(animal => {
+
+        const IconComponent = animal.image
+        return (
+          <Pressable onPress={() => handleItemPress(animal.slug)} key={animal.slug} style={[styles.animalItemContainer, selectedItemSlug === animal.slug ? { backgroundColor: Colors.yellow[100] } : null]}>
+            <IconComponent width={50} height={50}/>
+          </Pressable>
+      )})}
       
     </View>
   )

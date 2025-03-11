@@ -4,6 +4,7 @@ import { FontNames } from '@app/theme/fonts'
 import React, { FC } from 'react'
 import { Image, Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native'
 import XLogo from '@assets/images/svgs/x-logo.svg'
+import Svg from 'react-native-svg'
 
 type Props = {
   containerStyle?: ViewStyle,
@@ -17,13 +18,15 @@ const ProfileSummaryView: FC<Props> = ({
 
   const { authProfile } = useAuth()
 
+  const AnimalComponent = (animals.find(animal => animal.slug === authProfile?.avatar)?.image)
+
   return (
     <Pressable onPress={onProfilePress} style={{...styles.container, ...containerStyle}}>
-      {(authProfile?.avatar === 'dog' || authProfile?.avatar === 'cat' || authProfile?.avatar === 'mouse') ? (
-        <Image
-          source={animals.find(animal => animal.slug === authProfile.avatar)?.image}
-          style={styles.avatar}
-          resizeMode='contain'
+      {AnimalComponent ? (
+        <AnimalComponent
+          width={50}
+          height={50}
+          style={styles.avatar}          
         />
       ) : (
         <Image

@@ -12,18 +12,22 @@ import IconEconomy from '@assets/images/svgs/icon-cat-economy-yellow.svg'
 import IconGeography from '@assets/images/svgs/icon-cat-geography.svg'
 import IconArtsLit from '@assets/images/svgs/icon-cat-arts-lit-green.svg'
 
-export const animals: {slug: string, image: ImageProps}[] = [
+import IconBlueDog from '@assets/images/svgs/icon-green-dog.svg'
+import IconRedCat from '@assets/images/svgs/icon-red-cat.svg'
+import IconYellowRat from '@assets/images/svgs/icon-yellow-rat.svg'
+
+export const animals = [
   {
     slug: 'dog',
-    image: require('@assets/images/img-spirit-animal-1.png')
+    image: IconBlueDog
   },
   {
     slug: 'cat',
-    image: require('@assets/images/img-spirit-animal-2.png')
+    image: IconRedCat
   },
   {
-    slug: 'mouse',
-    image: require('@assets/images/img-spirit-animal-3.png')
+    slug: 'rat',
+    image: IconYellowRat
   }
 ]
 

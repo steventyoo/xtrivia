@@ -105,7 +105,7 @@ const CodeVerificationScreen = () => {
           verification code
         </Text>
         <Text style={styles.subTitleText}>
-          we sent you a text message with a 4-digit code
+          we sent you a text message with a 6-digit code
         </Text>
         <CodeField
           ref={ref}
