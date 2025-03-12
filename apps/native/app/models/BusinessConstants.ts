@@ -15,20 +15,44 @@ import IconArtsLit from '@assets/images/svgs/icon-cat-arts-lit-green.svg'
 import IconBlueDog from '@assets/images/svgs/icon-green-dog.svg'
 import IconRedCat from '@assets/images/svgs/icon-red-cat.svg'
 import IconYellowRat from '@assets/images/svgs/icon-yellow-rat.svg'
+import IconBlueFox from '@assets/images/svgs/icon-blue-fox.svg'
+import IconBluePig from '@assets/images/svgs/icon-blue-pig.svg'
+import IconUnionBear from '@assets/images/svgs/icon-union-bear.svg'
 
 export const animals = [
   {
     slug: 'dog',
-    image: IconBlueDog
+    image: IconBlueDog,
+    free: true
   },
   {
     slug: 'cat',
-    image: IconRedCat
+    image: IconRedCat,
+    free: true
   },
   {
     slug: 'rat',
-    image: IconYellowRat
-  }
+    image: IconYellowRat,
+    free: true
+  },
+  {
+    slug: 'fox',
+    image: IconYellowRat,
+    free: false,
+    unlockFriends: 1,
+  },
+  {
+    slug: 'pork',
+    image: IconBluePig,
+    free: false,
+    unlockFriends: 5,
+  },
+  {
+    slug: 'bear',
+    image: IconUnionBear,
+    free: false,
+    unlockFriends: 10,
+  },
 ]
 
 export const Categories = [

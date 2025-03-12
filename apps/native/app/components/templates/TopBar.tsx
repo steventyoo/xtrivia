@@ -6,20 +6,22 @@ import { TouchableOpacity } from 'react-native'
 type Props = {
   containerStyle?: ViewStyle,
   withSettings?: boolean,
-  onProfilePress?: () => void
+  onProfilePress?: () => void,
+  onSettingsPress?: () => void
 }
 
 const TopBar: FC<Props> = ({
   containerStyle,
   withSettings,
-  onProfilePress
+  onProfilePress,
+  onSettingsPress
 }) => {
   return (
     <View style={{...styles.container, ...containerStyle}}>
       <ProfileSummaryView onProfilePress={onProfilePress} containerStyle={styles.profileView} />
       <View style={{ flex: 1 }} />
       {withSettings && (
-        <TouchableOpacity style={styles.rightButton}>
+        <TouchableOpacity onPress={onSettingsPress} style={styles.rightButton}>
           <Image source={require('@assets/images/img-settings.png')} style={styles.settingsIcon}/>
         </TouchableOpacity>
       )}

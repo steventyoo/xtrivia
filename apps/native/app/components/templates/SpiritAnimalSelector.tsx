@@ -8,12 +8,12 @@ type Props = {
   onAnimalSelected?: (slug: string) => void;
 }
 
-
-
 const SpiritAnimalSelector: FC<Props> = ({
   containerStyle,
   onAnimalSelected
 }) => {
+
+  const freeAnimals = animals.filter(animal => animal.free)
 
   const [selectedItemSlug, setSelectedItemSlug] = useState('dog')
 
@@ -27,8 +27,7 @@ const SpiritAnimalSelector: FC<Props> = ({
 
   return (
     <View style={[styles.container, containerStyle]}>
-      {animals.map(animal => {
-
+      {freeAnimals.map(animal => {
         const IconComponent = animal.image
         return (
           <Pressable onPress={() => handleItemPress(animal.slug)} key={animal.slug} style={[styles.animalItemContainer, selectedItemSlug === animal.slug ? { backgroundColor: Colors.yellow[100] } : null]}>

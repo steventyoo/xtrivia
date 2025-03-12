@@ -4,6 +4,8 @@ import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import IconAppleFruit from '@assets/images/svgs/icon-apple-fruit.svg'
 import { FontNames } from "@app/theme/fonts";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { RootStackParamsList } from "@app/navigation/RootStack";
 
 type Props = {
   containerStyle?: ViewStyle,
@@ -14,6 +16,9 @@ const HomeButtonsCarousel: FC<Props> = ({
   mainCircleSize = 150,
   containerStyle
 }) => {
+
+  const  navigation = useNavigation<NavigationProp<RootStackParamsList>>()
+
   return (
     <View style={[styles.container, { width: mainCircleSize * 5 / 3, height: mainCircleSize * 5 / 3}, containerStyle]}>
       {Categories.map((category, index) => {
@@ -36,6 +41,7 @@ const HomeButtonsCarousel: FC<Props> = ({
         )}        
       )}
       <TouchableOpacity
+        onPress={() => navigation.navigate('Challenge')}
         style={{
           width: mainCircleSize,
           height: mainCircleSize,

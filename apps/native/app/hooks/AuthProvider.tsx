@@ -54,7 +54,6 @@ export const AuthContextProvider = ({ children }: {children: ReactElement}) => {
                     .eq('id', refreshedSession.user.id)
                     .single()
                     .then(({ data }) => {
-                      console.log("profile data loaded ", data)
                       setProfile(data)
                       setInitialzied(true)
                     })
@@ -77,7 +76,6 @@ export const AuthContextProvider = ({ children }: {children: ReactElement}) => {
                 .eq('id', session.user.id)
                 .single()
                 .then(({ data }) => {
-                  console.log("profile data loaded ", data)
                   setProfile(data)
                   setInitialzied(true)
                 })

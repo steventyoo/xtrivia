@@ -69,7 +69,7 @@ const ProfileStats = () => {
           <Animated.View style={[styles.pointsView, { width: scoreAnimation }]} />
         </View>
         <Text style={styles.gamesPlayedText}>
-          {myPoints}
+          {myPoints.toFixed(2)}
         </Text>
       </View>
       <View style={styles.categoryView}>
@@ -123,7 +123,7 @@ export default ProfileStats
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    height: '100%',    
   },
   gamesPlayedRow: {
     flexDirection: 'row',

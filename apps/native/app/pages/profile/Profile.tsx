@@ -7,30 +7,28 @@ import { supabase } from '@app/services/supabase';
 import TopBar from '@app/components/templates/TopBar';
 import PagerView from 'react-native-pager-view';
 import ProfileSectionsComponent, { ProfileSection } from './ProfileSectionsComponent';
-import ProfileStats from './ProfileStats';
+import ProfileStats from './stats/ProfileStats';
 import { useRef, useState } from 'react';
+import ProfileAvatarSelector from './avatars/ProfileAvatarSelector';
+import ProfileFriends from './friends/ProfileFriends';
+import ProfileRank from './rank/ProfileRank';
+import { HomeStackParamsList } from '@app/navigation/HomeStack';
 
 const ProfileScreen = () => {
 
-  const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
+  const navigation = useNavigation<NavigationProp<HomeStackParamsList>>()
 
   const refPagerView = useRef<PagerView>(null)
 
   const [currentSection, setCurrentSection] = useState<ProfileSection>(ProfileSection.stats)
 
-  const handleSignout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      console.error('Error signing out:', error.message);
-    } else {
-      navigation.dispatch(StackActions.replace('Auth'))
-      console.log('User signed out successfully');
-    }
+  const handleProfileSettings = () => {
+    navigation.navigate('ProfileSettingsScreen')
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <TopBar withSettings />
+      <TopBar withSettings onSettingsPress={handleProfileSettings} />
       <ProfileSectionsComponent containerStyle={styles.sectionsPanel} selectedSectionItem={currentSection} onSectionItemClick={item => {
         if (item === ProfileSection.avatars) {
           refPagerView.current?.setPage(1)
@@ -58,16 +56,13 @@ const ProfileScreen = () => {
           <ProfileStats />
         </View>
         <View key="2" style={styles.subPagesCommon}>
-          <Text>Avatars page</Text>
+          <ProfileAvatarSelector />
         </View>
         <View key="3" style={styles.subPagesCommon}>
-          <Text>Friends page</Text>
+          <ProfileFriends />
         </View>
         <View key="4" style={styles.subPagesCommon}>
-          <Text>Rank page</Text>
-          <TouchableOpacity onPress={handleSignout}>
-            <Text>Sign out</Text>
-          </TouchableOpacity>
+          <ProfileRank />
         </View>
       </PagerView>
     </SafeAreaView>

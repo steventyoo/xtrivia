@@ -30,7 +30,7 @@ const PlayerIdCreateScreen = () => {
     const { data, error } = await supabase
       .from('profiles')
       .upsert(
-        [{ id: authUserId, username: playerId, avatar: selectedSpiritAnimal }],
+        [{ id: authUserId, username: playerId, avatar: selectedSpiritAnimal, created_at: new Date().toISOString() }],
         { onConflict: 'id' }
       ).select();
 
@@ -43,7 +43,6 @@ const PlayerIdCreateScreen = () => {
         setPlayerIdError(error.message)
       }      
     } else {
-      console.log(data)
       updateAuthProfile?.(data[0])
       navigation.dispatch(StackActions.replace('Main'))
     }
