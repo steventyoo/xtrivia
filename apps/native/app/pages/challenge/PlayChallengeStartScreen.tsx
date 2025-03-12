@@ -15,7 +15,7 @@ const PlayChallengeStartScreen = () => {
       <View style={styles.mainContentContainer}>
         <Image source={require('@assets/animations/daily-challenge-start.gif')} style={{ width: 267, height: 267 }}/>
       </View>
-      <Logo containerStyle={styles.logoContainer} />      
+      <Logo containerStyle={styles.logoContainer} iconSize={25} textSize={25} />      
     </SafeAreaView>
   )
 }
