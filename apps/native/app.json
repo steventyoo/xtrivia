@@ -47,6 +47,12 @@
         }
       ],
       "expo-localization"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5eebe622-c3ad-4e29-84b7-296d7ccfd6ed"
+      }
+    },
+    "owner": "lzflabs"
   }
 }
