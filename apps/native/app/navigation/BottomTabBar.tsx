@@ -1,5 +1,5 @@
 import { Colors } from "@app/theme/colors";
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontFamily: FontNames.Inconsolata,
     marginTop: 5,
-    fontSize: 12
+    fontSize: FontSizes.body
   }
 })

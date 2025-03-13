@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native'
 
 import IconFriends from '@assets/images/svgs/icon-friend-group.svg'
 import IconFriendRequests from '@assets/images/svgs/icon-friend-requests.svg'
+import { FontSizes } from '@app/theme/fonts'
 
 
 export enum FriendSection {
@@ -86,6 +87,6 @@ const styles = StyleSheet.create({
   },
   itemTextCommon: {
     marginLeft: 10,
-    fontSize: 12,
+    fontSize: FontSizes.body,
   },  
 })

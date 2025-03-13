@@ -1,4 +1,4 @@
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import React, { useMemo, useState } from "react";
 import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -130,14 +130,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 20,
+    fontSize: FontSizes.h1,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 16,
+    fontSize: FontSizes.h2,
     marginHorizontal: 20,
     marginTop: 40,
     color: 'black',
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,
   },
   inputCaption: {
-    fontSize: 12,
+    fontSize: FontSizes.body,
   },
   input: {
     marginTop: 5,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize: 12,
+    fontSize: FontSizes.body,
   },
   dividerView: {
     flexDirection: 'row',
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   },
   dividerText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 14,
+    fontSize: FontSizes.body,
     marginHorizontal: 10,
     lineHeight: 16,
   },
@@ -200,6 +200,6 @@ const styles = StyleSheet.create({
   },
   phoneInputInput: {
     paddingHorizontal: 5,
-    fontSize: 12,
+    fontSize: FontSizes.body,
   }
 })

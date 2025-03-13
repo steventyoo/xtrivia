@@ -1,11 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useEffect } from 'react';
-import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
-import { RootStackParamsList } from '@app/navigation/RootStack';
 import Logo from '@app/components/Logo';
-import { useAuth } from '@app/hooks/AuthProvider';
-import FastImage from 'react-native-fast-image';
 import { Image } from 'expo-image';
 
 const PlayChallengeStartScreen = () => {

@@ -1,4 +1,5 @@
 import { Colors } from '@app/theme/colors'
+import { FontSizes } from '@app/theme/fonts'
 import React, { FC, useEffect, useState } from 'react'
 import { TouchableOpacity, View, Text, ViewStyle } from 'react-native'
 import { StyleSheet } from 'react-native'
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.gray[40]
   },
   itemTextCommon: {
-    fontSize: 12,    
+    fontSize: FontSizes.body,    
   },
   itemTextSelected: {
     color: 'white'

@@ -5,6 +5,7 @@ import { animals } from '@app/models/BusinessConstants'
 import { useAuth } from '@app/hooks/AuthProvider'
 import { supabase } from '@app/services/supabase'
 import LottieView from 'lottie-react-native'
+import { FontSizes } from '@app/theme/fonts'
 
 const ProfileAvatarSelector = () => {
 
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
   avatarNotes: {
     marginTop: 5,
     textAlign: 'center',
-    fontSize: 12,
+    fontSize: FontSizes.body,
     color: Colors.gray[40]
   },
   lottieSpinner: {

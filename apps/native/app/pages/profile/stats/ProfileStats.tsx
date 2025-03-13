@@ -4,6 +4,7 @@ import IconTrophy from '@assets/images/svgs/icon-trophy.svg'
 import IconXLogo from '@assets/images/svgs/x-logo.svg'
 import { Colors } from '@app/theme/colors'
 import { Categories } from '@app/models/BusinessConstants'
+import { FontSizes } from '@app/theme/fonts'
 
 const scoresForCategories: { [key: string]: number } = {
   general: 8.52,
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   gamesPlayedText: {
-    fontSize: 14,
+    fontSize: FontSizes.caption,
     color: 'black',
     marginLeft: 16,
     fontWeight: 'bold'
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   categoryText: {
-    fontSize: 12,
+    fontSize: FontSizes.body,
     color: 'black'
   },
   categoryItem: {

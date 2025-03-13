@@ -1,4 +1,4 @@
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Keyboard, KeyboardEvent, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -104,7 +104,7 @@ const PlayerIdCreateScreen = () => {
             value={playerId}
             onChangeText={setPlayerId}
           />
-          {!!playerIdError && (
+          {playerIdError !== "" && (
             <Text style={styles.inputError}>
               {playerIdError}
             </Text>
@@ -147,14 +147,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 20,
+    fontSize: FontSizes.h1,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 16,
+    fontSize: FontSizes.h2,
     marginHorizontal: 60,
     marginTop: 40,
     color: 'black',
@@ -167,11 +167,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,    
   },
   inputCaption: {
-    fontSize: 12,
+    fontSize: FontSizes.body,
     color: 'black'
   },
   inputError: {
-    fontSize: 12,
+    fontSize: FontSizes.body,
     color: 'red'
   },
   input: {
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize: 12,
+    fontSize: FontSizes.body,
   },
   codeFieldRoot: {
     marginTop: 30,
@@ -197,9 +197,6 @@ const styles = StyleSheet.create({
   },
   focusCell: {
     backgroundColor: Colors.gray[95],
-  },
-  cellText: {
-    fontSize: 24,
   },
   actionView: {
     position: 'absolute',

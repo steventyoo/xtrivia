@@ -1,5 +1,5 @@
 import { Colors } from '@app/theme/colors'
-import { FontNames } from '@app/theme/fonts'
+import { FontNames, FontSizes } from '@app/theme/fonts'
 import React, { useState } from 'react'
 import { Image, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
 import IconClose from '@assets/images/svgs/icon-close.svg'
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: Colors.gray[80],
-    fontSize: 16,
+    fontSize: FontSizes.h2,
     height: 36,
     lineHeight: 20,
     paddingVertical: 0,

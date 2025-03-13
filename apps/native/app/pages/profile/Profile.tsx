@@ -1,9 +1,6 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { FontNames } from '@app/theme/fonts';
-import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
-import { RootStackParamsList } from '@app/navigation/RootStack';
-import { supabase } from '@app/services/supabase';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import TopBar from '@app/components/templates/TopBar';
 import PagerView from 'react-native-pager-view';
 import ProfileSectionsComponent, { ProfileSection } from './ProfileSectionsComponent';
@@ -75,19 +72,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white'
-  },
-  logoContainer: {
-    marginTop: 60,
-    alignSelf: 'center'
-  },
-  title: {
-    fontFamily: FontNames.Inconsolata,
-    fontSize: 30,
-    marginTop: 30,
-    alignSelf: 'center'
-  },
-  homeProfilePanel: {
-    marginLeft: 20
   },
   carousel: {
     alignSelf: 'center',

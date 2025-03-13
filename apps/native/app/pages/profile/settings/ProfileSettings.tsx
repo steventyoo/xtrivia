@@ -1,6 +1,6 @@
-import { Image, Platform, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { FontNames } from '@app/theme/fonts';
+import { FontNames, FontSizes } from '@app/theme/fonts';
 import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
 import TopBar from '@app/components/templates/TopBar';
 import { useState } from 'react';
@@ -10,7 +10,6 @@ import { Colors } from '@app/theme/colors';
 import { useAuth } from '@app/hooks/AuthProvider';
 import SwitchButton from '@app/components/buttons/SwitchButton';
 import { supabase } from '@app/services/supabase';
-import LottieView from 'lottie-react-native';
 import ButtonSpinner from '@app/components/ButtonSpinner';
 import { convertDatabaseTimeToDateFormat } from '@app/utils/timeUtils';
 
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
   },
   settingsTitle: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 17,
+    fontSize: FontSizes.h2,
     marginLeft: 10
   },
   sectionView: {
@@ -175,7 +174,7 @@ const styles = StyleSheet.create({
   },
   sectionText: {
     color: 'black',
-    fontSize: 12
+    fontSize: FontSizes.body
   },
   infoRow: {
     marginLeft: 16,
@@ -189,7 +188,7 @@ const styles = StyleSheet.create({
   },
   infoText: {
     marginLeft: 10,
-    fontSize: 12,
+    fontSize: FontSizes.body,
     color: 'black'
   },
   socialIcons: {

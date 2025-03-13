@@ -8,6 +8,7 @@ import { Profile } from '@app/models/Profile'
 import RankText from '@app/components/RankText'
 import { animals } from '@app/models/BusinessConstants'
 import { useAuth } from '@app/hooks/AuthProvider'
+import { FontSizes } from '@app/theme/fonts'
 
 const ProfileRank = () => {
 
@@ -16,12 +17,11 @@ const ProfileRank = () => {
   const [loadedProfiles,  setLoadedProfiles] = useState<Profile[]>([])
 
   const loadProfiles = async () => {
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('profiles')
       .select('*')
       .not('username', 'is', null)
       .order('x_score', { ascending: false })
-    console.log(data)
     setLoadedProfiles(data as Profile[])
   }
 
@@ -103,6 +103,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0
   },
   textItem: {
-    fontSize: 12
+    fontSize: FontSizes.body
   }
 })

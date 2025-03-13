@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Pressable, StyleSheet, View, ViewStyle } from 'react-native'
+import { Pressable, ViewStyle } from 'react-native'
 import IconSwitchOn from '@assets/images/svgs/icon-toggle-on.svg'
 import IconSwitchOff from '@assets/images/svgs/icon-toggle-off.svg'
 
@@ -26,7 +26,3 @@ const SwitchButton: FC<Props> = ({
 }
 
 export default SwitchButton
-
-const styles = StyleSheet.create({
-
-})

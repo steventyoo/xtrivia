@@ -1,4 +1,5 @@
 import { Colors } from "@app/theme/colors";
+import { FontSizes } from "@app/theme/fonts";
 import LottieView from "lottie-react-native";
 import React, { FC, ReactElement } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, ViewStyle } from "react-native";
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     height: 44,
   },
   text: {
-    fontSize: 12,
+    fontSize: FontSizes.body,
   },
   leftIconContainer: {
     position: 'absolute',
