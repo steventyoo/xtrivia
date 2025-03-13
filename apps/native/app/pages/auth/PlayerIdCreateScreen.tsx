@@ -1,4 +1,4 @@
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Keyboard, KeyboardEvent, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,17 +8,64 @@ import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import SpiritAnimalSelector from "@app/components/templates/SpiritAnimalSelector";
 import { NavigationProp, StackActions, useNavigation } from "@react-navigation/native";
 import { RootStackParamsList } from "@app/navigation/RootStack";
+import { useAuth } from "@app/hooks/AuthProvider";
+import { supabase } from "@app/services/supabase";
 
 const PlayerIdCreateScreen = () => {
+
+  const { authUserId, updateAuthProfile } = useAuth()
 
   const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
 
   const [bottomHeight, setBottomHeight] = useState(80)
   const [playerId, setPlayerId] = useState('');
+  const [playerIdError, setPlayerIdError] = useState('');
+  const [selectedSpiritAnimal, setSelectedSpiritAnimal] = useState('dog')
+  const [processing, setProcessing] = useState(false)
 
-  const handleComplete = () => {
-    navigation.dispatch(StackActions.replace('Main'))
+  const handleComplete = async () => {
+
+    setProcessing(true)
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .upsert(
+        [{ id: authUserId, username: playerId, avatar: selectedSpiritAnimal, created_at: new Date().toISOString() }],
+        { onConflict: 'id' }
+      ).select();
+
+    setProcessing(false)
+
+    if (error) {
+      if (error.code === '23505') {
+        setPlayerIdError('duplicated player id')
+      } else {
+        setPlayerIdError(error.message)
+      }      
+    } else {
+      updateAuthProfile?.(data[0])
+      navigation.dispatch(StackActions.replace('Main'))
+    }
   }
+
+  useEffect(() => {
+    if (playerId === "") {
+      setPlayerIdError("")
+    } else {
+      if (playerId.length < 3) {
+        setPlayerIdError('player Id should be at least 3 characters length.')
+      } else if (playerId.length > 15) {
+        setPlayerIdError('player Id should be 15 characters at maximum.')
+      } else {
+        const regex = /[^a-zA-Z0-9]/
+        if (regex.test(playerId)) {
+          setPlayerIdError('only letters and numbers, please')
+        } else {
+          setPlayerIdError('')
+        }
+      }
+    }
+  }, [playerId])
   
   useEffect(() => {
     function onKeyboardDidShow(e: KeyboardEvent) {
@@ -56,13 +103,21 @@ const PlayerIdCreateScreen = () => {
             style={styles.input}
             value={playerId}
             onChangeText={setPlayerId}
-          />          
+          />
+          {playerIdError !== "" && (
+            <Text style={styles.inputError}>
+              {playerIdError}
+            </Text>
+          )}          
         </View>
         <View style={styles.inputView}>
           <Text style={styles.inputCaption}>
             select your spirit animal
           </Text>
-          <SpiritAnimalSelector containerStyle={{ marginTop: 10 }}/>            
+          <SpiritAnimalSelector
+            containerStyle={{ marginTop: 10 }}
+            onAnimalSelected={setSelectedSpiritAnimal}
+          />
         </View>              
       </View>
       <View style={{...styles.actionView, bottom: bottomHeight}}>
@@ -70,7 +125,8 @@ const PlayerIdCreateScreen = () => {
           type="primary"
           text="complete"
           onPress={handleComplete}
-          disabled={playerId.length < 1}
+          disabled={playerId.length < 1 || !!playerIdError}
+          loading={processing}
           containerStyle={styles.cta}
         />
       </View>
@@ -91,14 +147,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 20,
+    fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 16,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 60,
     marginTop: 40,
     color: 'black',
@@ -111,8 +167,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,    
   },
   inputCaption: {
-    fontSize: 12,
+    fontSize: FontSizes.body.small,
     color: 'black'
+  },
+  inputError: {
+    fontSize: FontSizes.body.small,
+    color: 'red'
   },
   input: {
     marginTop: 5,
@@ -121,7 +181,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize: 12,
+    fontSize: FontSizes.body.small,
   },
   codeFieldRoot: {
     marginTop: 30,
@@ -137,9 +197,6 @@ const styles = StyleSheet.create({
   },
   focusCell: {
     backgroundColor: Colors.gray[95],
-  },
-  cellText: {
-    fontSize: 24,
   },
   actionView: {
     position: 'absolute',

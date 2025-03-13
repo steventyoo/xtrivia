@@ -1,4 +1,4 @@
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Keyboard, KeyboardEvent } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -11,9 +11,10 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
-import { NavigationProp, RouteProp, useNavigation, useRoute } from "@react-navigation/native";
+import { NavigationProp, RouteProp, StackActions, useNavigation, useRoute } from "@react-navigation/native";
 import { AuthStackParamsList } from "@app/navigation/AuthStack";
 import { supabase } from "@app/services/supabase";
+import { useAuth } from "@app/hooks/AuthProvider";
 
 const CELL_COUNT = 6
 
@@ -21,6 +22,8 @@ const CodeVerificationScreen = () => {
 
   const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
   const route = useRoute<RouteProp<AuthStackParamsList, 'CodeVerificationScreen'>>()
+
+  const { updateAuthProfile } = useAuth()
 
   const [bottomHeight, setBottomHeight] = useState(80)
   const [verifyProcessing, setVerifyProcessing] = useState(false)
@@ -38,20 +41,41 @@ const CodeVerificationScreen = () => {
     setVerifyError('')
 
     setVerifyProcessing(true)
-    const { error, data } = await supabase.auth.verifyOtp({
+    const { error, data: { user } } = await supabase.auth.verifyOtp({
       phone: route.params.phone,
       token: code,
       type: 'sms',
     });
   
-    setVerifyProcessing(false)
     if (error) {
-      console.log('Error verifying OTP:', error.message);
+      setVerifyProcessing(false)
       setVerifyError('Invalid code')
       setCode('')
     } else {
-      console.log('User signed in:', data);
-      navigation.navigate('PlayerIdCreateScreen')
+      if (user) {
+        const { data: profile, error: profileError } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single();
+
+        if (profileError || !profile) {
+          navigation.navigate('PlayerIdCreateScreen')
+        } else {
+          if (profile.username && profile.avatar) {
+            updateAuthProfile?.(profile)
+            navigation.dispatch(StackActions.replace('Main'))
+          } else {
+            navigation.navigate('PlayerIdCreateScreen')
+          }
+        }
+      } else {
+        setVerifyProcessing(false)
+        setVerifyError('Unknown error happened')
+        setCode('')
+      }
+
+      
     }
   }
 
@@ -81,7 +105,7 @@ const CodeVerificationScreen = () => {
           verification code
         </Text>
         <Text style={styles.subTitleText}>
-          we sent you a text message with a 4-digit code
+          we sent you a text message with a 6-digit code
         </Text>
         <CodeField
           ref={ref}
@@ -142,14 +166,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 20,
+    fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 16,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 60,
     marginTop: 40,
     color: 'black',
@@ -163,7 +187,7 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 16,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 60,
     marginTop: 20,
     color: 'red',
@@ -187,7 +211,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.gray[95],
   },
   cellText: {
-    fontSize: 24,
+    fontSize: FontSizes.h.medium,
   },
   actionView: {
     position: 'absolute',

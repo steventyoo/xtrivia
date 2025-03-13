@@ -10,17 +10,21 @@ import { useAuth } from '@app/hooks/AuthProvider';
 const SplashScreen = () => {
 
   const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
-  const { initialized, session } = useAuth()
+  const { initialized, session, authProfile } = useAuth()
 
   useEffect(() => {
     if (initialized) {
       if (session) {
-        navigation.dispatch(StackActions.replace('Main'))
+        if (authProfile && !!authProfile.username && !!authProfile.avatar) {
+          navigation.dispatch(StackActions.replace('Main'))
+        } else {
+          navigation.dispatch(StackActions.replace('Auth', { screen: 'PlayerIdCreateScreen' }))
+        }        
       } else {
         navigation.dispatch(StackActions.replace('Auth'))
       }      
     }    
-  }, [initialized])
+  }, [initialized, session])
 
   return (
     <SafeAreaView style={styles.container}>

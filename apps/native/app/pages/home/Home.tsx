@@ -1,37 +1,22 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Logo from '@app/components/Logo';
-import { FontNames } from '@app/theme/fonts';
-import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
-import { RootStackParamsList } from '@app/navigation/RootStack';
-import { supabase } from '@app/services/supabase';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import HomeButtonsCarousel from '@app/components/templates/HomeButtonsCarousel';
+import TopBar from '@app/components/templates/TopBar';
+import { HomeStackParamsList } from '@app/navigation/HomeStack';
 
 const HomeScreen = () => {
 
-  const navigation = useNavigation<NavigationProp<RootStackParamsList>>()
+  const navigation = useNavigation<NavigationProp<HomeStackParamsList>>()
 
-  const handleSignout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      console.error('Error signing out:', error.message);
-    } else {
-      navigation.dispatch(StackActions.replace('Auth'))
-      console.log('User signed out successfully');
-    }    
+  const handleNavigateToProfile = () => {
+    navigation.navigate('ProfileScreen')
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <Logo containerStyle={styles.logoContainer} />
-      <Text style={styles.title}>
-        home screen
-      </Text>
-
-      <TouchableOpacity onPress={handleSignout}>
-        <Text style={{ alignSelf: 'center', marginTop: 30 }}>
-          Sign out
-        </Text>
-      </TouchableOpacity>
+      <TopBar onProfilePress={handleNavigateToProfile} />
+      <HomeButtonsCarousel containerStyle={styles.carousel} />
     </SafeAreaView>
   )
 }
@@ -47,10 +32,8 @@ const styles = StyleSheet.create({
     marginTop: 60,
     alignSelf: 'center'
   },
-  title: {
-    fontFamily: FontNames.Inconsolata,
-    fontSize: 30,
-    marginTop: 30,
-    alignSelf: 'center'
+  carousel: {
+    alignSelf: 'center',
+    marginTop: 40,
   }
 })

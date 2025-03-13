@@ -1,6 +1,6 @@
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import React, { useMemo, useState } from "react";
-import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
@@ -37,7 +37,8 @@ const RegisterScreen = () => {
 
     setProcessingPhoneAuth(false)
     if (error) {
-      console.error('Error sending OTP:', error.message);
+      console.log('Error sending OTP:', error.message);
+      Alert.prompt('SMS Failed', "Sorry, we are unable to use your phone number to authorize", [{ text: 'Ok' }])      
     } else {
       navigation.navigate('CodeVerificationScreen', { phone })
     }
@@ -129,14 +130,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 20,
+    fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 16,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 20,
     marginTop: 40,
     color: 'black',
@@ -149,7 +150,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,
   },
   inputCaption: {
-    fontSize: 12,
+    fontSize: FontSizes.body.small,
   },
   input: {
     marginTop: 5,
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize: 12,
+    fontSize: FontSizes.body.small,
   },
   dividerView: {
     flexDirection: 'row',
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
   },
   dividerText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 14,
+    fontSize: FontSizes.body.small,
     marginHorizontal: 10,
     lineHeight: 16,
   },
@@ -199,6 +200,6 @@ const styles = StyleSheet.create({
   },
   phoneInputInput: {
     paddingHorizontal: 5,
-    fontSize: 12,
+    fontSize: FontSizes.body.small,
   }
 })

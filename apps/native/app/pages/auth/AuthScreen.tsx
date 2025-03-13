@@ -1,4 +1,4 @@
-import { FontNames } from "@app/theme/fonts";
+import { FontNames, FontSizes } from "@app/theme/fonts";
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -66,14 +66,14 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 30,
+    fontSize: FontSizes.h.large,
     marginTop: 30,
     alignSelf: 'center',
     color: 'black'
   },
   welcomeDescText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 20,
+    fontSize: FontSizes.h.regular,
     marginTop: 30,
     color: 'black',
     alignSelf: 'center',

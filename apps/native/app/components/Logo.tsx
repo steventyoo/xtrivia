@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { StyleSheet, Text, View, ViewStyle } from 'react-native'
 import XTriviaLogo from '@images/svgs/x-logo.svg'
-import { FontNames } from '@app/theme/fonts'
+import { FontNames, FontSizes } from '@app/theme/fonts'
 
 type Props = {
   containerStyle?: ViewStyle;
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   logoText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: 50,
+    fontSize: FontSizes.h.extraLarge,
     marginLeft: 10,
   },
   logoContainer: {

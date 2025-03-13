@@ -1,31 +1,19 @@
+import { animals } from '@app/models/BusinessConstants';
 import { Colors } from '@app/theme/colors'
 import React, { FC, useState } from 'react'
-import { Image, ImageProps, Pressable, StyleSheet, View, ViewStyle } from 'react-native'
+import { Image, Pressable, StyleSheet, View, ViewStyle } from 'react-native'
 
 type Props = {
   containerStyle?: ViewStyle;
   onAnimalSelected?: (slug: string) => void;
 }
 
-const animals: {slug: string, image: ImageProps}[] = [
-  {
-    slug: 'dog',
-    image: require('@assets/images/img-spirit-animal-1.png')
-  },
-  {
-    slug: 'cat',
-    image: require('@assets/images/img-spirit-animal-2.png')
-  },
-  {
-    slug: 'mouse',
-    image: require('@assets/images/img-spirit-animal-3.png')
-  }
-]
-
 const SpiritAnimalSelector: FC<Props> = ({
   containerStyle,
   onAnimalSelected
 }) => {
+
+  const freeAnimals = animals.filter(animal => animal.free)
 
   const [selectedItemSlug, setSelectedItemSlug] = useState('dog')
 
@@ -39,11 +27,13 @@ const SpiritAnimalSelector: FC<Props> = ({
 
   return (
     <View style={[styles.container, containerStyle]}>
-      {animals.map(animal => (
-        <Pressable onPress={() => handleItemPress(animal.slug)} key={animal.slug} style={[styles.animalItemContainer, selectedItemSlug === animal.slug ? { backgroundColor: Colors.yellow[100] } : null]}>
-          <Image source={animal.image} style={styles.animalItemImage} resizeMode='contain' />
-        </Pressable>
-      ))}
+      {freeAnimals.map(animal => {
+        const IconComponent = animal.image
+        return (
+          <Pressable onPress={() => handleItemPress(animal.slug)} key={animal.slug} style={[styles.animalItemContainer, selectedItemSlug === animal.slug ? { backgroundColor: Colors.yellow[100] } : null]}>
+            <IconComponent width={50} height={50}/>
+          </Pressable>
+      )})}
       
     </View>
   )

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import AppScreenRoot from './app/AppScreenRoot';
 import "./global.css"
 import { verifyInstallation } from 'nativewind';
@@ -11,6 +10,6 @@ export default function App() {
   return (
     <AuthContextProvider>
       <AppScreenRoot />
-    </AuthContextProvider>    
+    </AuthContextProvider>
   );
 }
