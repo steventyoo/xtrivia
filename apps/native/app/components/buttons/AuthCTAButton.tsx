@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     height: 44,
   },
   text: {
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
   },
   leftIconContainer: {
     position: 'absolute',

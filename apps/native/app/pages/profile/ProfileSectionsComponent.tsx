@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.gray[40]
   },
   itemTextCommon: {
-    fontSize: FontSizes.body,    
+    fontSize: FontSizes.body.small,    
   },
   itemTextSelected: {
     color: 'white'

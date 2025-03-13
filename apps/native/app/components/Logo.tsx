@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   logoText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.logoTextLarge,
+    fontSize: FontSizes.h.extraLarge,
     marginLeft: 10,
   },
   logoContainer: {

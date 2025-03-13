@@ -87,6 +87,6 @@ const styles = StyleSheet.create({
   },
   itemTextCommon: {
     marginLeft: 10,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
   },  
 })

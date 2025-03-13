@@ -147,14 +147,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h1,
+    fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 60,
     marginTop: 40,
     color: 'black',
@@ -167,11 +167,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,    
   },
   inputCaption: {
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     color: 'black'
   },
   inputError: {
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     color: 'red'
   },
   input: {
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
   },
   codeFieldRoot: {
     marginTop: 30,

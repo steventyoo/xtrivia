@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   gamesPlayedText: {
-    fontSize: FontSizes.caption,
+    fontSize: FontSizes.body.medium,
     color: 'black',
     marginLeft: 16,
     fontWeight: 'bold'
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   categoryText: {
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     color: 'black'
   },
   categoryItem: {

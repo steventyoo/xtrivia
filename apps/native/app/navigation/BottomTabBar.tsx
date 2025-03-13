@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontFamily: FontNames.Inconsolata,
     marginTop: 5,
-    fontSize: FontSizes.body
+    fontSize: FontSizes.body.small
   }
 })

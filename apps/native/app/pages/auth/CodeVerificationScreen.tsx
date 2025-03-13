@@ -166,14 +166,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h1,
+    fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 60,
     marginTop: 40,
     color: 'black',
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 60,
     marginTop: 20,
     color: 'red',
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.gray[95],
   },
   cellText: {
-    fontSize: FontSizes.codeText,
+    fontSize: FontSizes.h.medium,
   },
   actionView: {
     position: 'absolute',

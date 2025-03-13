@@ -66,14 +66,14 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h1,
+    fontSize: FontSizes.h.large,
     marginTop: 30,
     alignSelf: 'center',
     color: 'black'
   },
   welcomeDescText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.h.regular,
     marginTop: 30,
     color: 'black',
     alignSelf: 'center',

@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   dailyChallenge: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.caption,
+    fontSize: FontSizes.body.medium,
     textAlign: 'center',
     color: Colors.blue.primary,
     marginTop: 10

@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: Colors.gray[80],
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.body.large,
     height: 36,
     lineHeight: 20,
     paddingVertical: 0,

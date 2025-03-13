@@ -44,12 +44,12 @@ export default RankText
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     color: 'black'
   },
   rankedText: {
     fontFamily: FontNames.InconsolataBold,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     lineHeight: 15,
   },
   topRankedView: {

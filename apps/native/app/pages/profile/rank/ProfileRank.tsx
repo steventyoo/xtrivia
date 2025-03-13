@@ -103,6 +103,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0
   },
   textItem: {
-    fontSize: FontSizes.body
+    fontSize: FontSizes.body.small
   }
 })

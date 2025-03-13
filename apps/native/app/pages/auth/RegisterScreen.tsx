@@ -130,14 +130,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h1,
+    fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.body.large,
     marginHorizontal: 20,
     marginTop: 40,
     color: 'black',
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,
   },
   inputCaption: {
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
   },
   input: {
     marginTop: 5,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 8,
     paddingHorizontal: 10,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
   },
   dividerView: {
     flexDirection: 'row',
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   },
   dividerText: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     marginHorizontal: 10,
     lineHeight: 16,
   },
@@ -200,6 +200,6 @@ const styles = StyleSheet.create({
   },
   phoneInputInput: {
     paddingHorizontal: 5,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
   }
 })

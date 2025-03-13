@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
   },
   settingsTitle: {
     fontFamily: FontNames.Inconsolata,
-    fontSize: FontSizes.h2,
+    fontSize: FontSizes.body.large,
     marginLeft: 10
   },
   sectionView: {
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   sectionText: {
     color: 'black',
-    fontSize: FontSizes.body
+    fontSize: FontSizes.body.small
   },
   infoRow: {
     marginLeft: 16,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   },
   infoText: {
     marginLeft: 10,
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     color: 'black'
   },
   socialIcons: {

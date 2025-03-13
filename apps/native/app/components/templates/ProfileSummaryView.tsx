@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: FontNames.InconsolataBold,
-    fontSize: FontSizes.body
+    fontSize: FontSizes.body.small
   },
   pointerPanel: {
     flexDirection: 'row',

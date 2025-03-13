@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   avatarNotes: {
     marginTop: 5,
     textAlign: 'center',
-    fontSize: FontSizes.body,
+    fontSize: FontSizes.body.small,
     color: Colors.gray[40]
   },
   lottieSpinner: {
