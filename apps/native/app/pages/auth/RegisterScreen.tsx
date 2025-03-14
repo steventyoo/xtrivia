@@ -1,4 +1,4 @@
-import { FontNames, FontSizes } from "@app/theme/fonts";
+import { Fonts, FontSizes } from "@app/theme/fonts";
 import React, { useMemo, useState } from "react";
 import { StyleSheet, View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -129,14 +129,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   titleText: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.h.regular,
     marginTop: 20,
     alignSelf: 'center',
     color: 'black'
   },
   subTitleText: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.body.large,
     marginHorizontal: 20,
     marginTop: 40,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 60,
   },
   dividerText: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.body.small,
     marginHorizontal: 10,
     lineHeight: 16,

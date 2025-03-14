@@ -1,5 +1,4 @@
-import { Colors } from '@app/theme/colors';
-import { FontNames, FontSizes } from '@app/theme/fonts';
+import { Fonts, FontSizes } from '@app/theme/fonts';
 import React, { FC } from  'react'
 import { Image, StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native'
 
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   rankedText: {
-    fontFamily: FontNames.InconsolataBold,
+    fontFamily: Fonts.Inconsolata.bold,
     fontSize: FontSizes.body.small,
     lineHeight: 15,
   },

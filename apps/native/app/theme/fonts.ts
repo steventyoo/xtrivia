@@ -1,6 +1,14 @@
-export enum FontNames {
-  Inconsolata = 'Inconsolata',
-  InconsolataBold = 'Inconsolata-Bold'
+
+export const Fonts = {
+  Inconsolata: {
+    regular: 'Inconsolate',
+    bold: 'Inconsolata-Bold'
+  },
+  RobotoMono: {
+    bold:'RobotoMono-Bold',
+    redular: 'RobotoMono-Regular',
+    italic: 'RobotoMono-Italic'
+  }
 }
 
 export const FontSizes = {
@@ -13,6 +21,7 @@ export const FontSizes = {
   body: {
     small: 12,
     medium: 14,
-    large: 16
+    large: 16,
+    extrasmall: 10
   }
 }

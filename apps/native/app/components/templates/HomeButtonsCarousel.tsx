@@ -3,7 +3,7 @@ import { Colors } from "@app/theme/colors";
 import React, { FC } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, ViewStyle } from "react-native";
 import IconAppleFruit from '@assets/images/svgs/icon-apple-fruit.svg'
-import { FontNames, FontSizes } from "@app/theme/fonts";
+import { Fonts, FontSizes } from "@app/theme/fonts";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamsList } from "@app/navigation/RootStack";
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   dailyChallenge: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.body.medium,
     textAlign: 'center',
     color: Colors.blue.primary,

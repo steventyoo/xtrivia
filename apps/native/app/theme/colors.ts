@@ -12,10 +12,12 @@ export const Colors = {
     95: '#FEF7FF'
   },
   yellow: {
+    25: '#FEF6D6',
     100: '#FDDC5C'
   },
   red: {
     90: '#ffd8e4',
+    95: '#ff004f',
     100: '#ff7972'
   },
   inputBorder: '#D9D9D9'

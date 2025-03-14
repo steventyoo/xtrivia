@@ -37,7 +37,7 @@ export const animals = [
   },
   {
     slug: 'fox',
-    image: IconYellowRat,
+    image: IconBlueFox,
     free: false,
     unlockFriends: 1,
   },

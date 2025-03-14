@@ -1,6 +1,6 @@
 import { useAuth } from '@app/hooks/AuthProvider'
 import { animals } from '@app/models/BusinessConstants'
-import { FontNames, FontSizes } from '@app/theme/fonts'
+import { Fonts, FontSizes } from '@app/theme/fonts'
 import React, { FC } from 'react'
 import { Image, Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native'
 import XLogo from '@assets/images/svgs/x-logo.svg'
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   text: {
-    fontFamily: FontNames.InconsolataBold,
+    fontFamily: Fonts.Inconsolata.bold,
     fontSize: FontSizes.body.small
   },
   pointerPanel: {

@@ -1,5 +1,5 @@
 import { Colors } from '@app/theme/colors'
-import { FontNames, FontSizes } from '@app/theme/fonts'
+import { FontSizes } from '@app/theme/fonts'
 import React, { useState } from 'react'
 import { Image, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
 import IconClose from '@assets/images/svgs/icon-close.svg'

@@ -1,6 +1,6 @@
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { FontNames, FontSizes } from '@app/theme/fonts';
+import { Fonts, FontSizes } from '@app/theme/fonts';
 import { NavigationProp, StackActions, useNavigation } from '@react-navigation/native';
 import TopBar from '@app/components/templates/TopBar';
 import { useState } from 'react';
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     height: 25
   },
   settingsTitle: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.body.large,
     marginLeft: 10
   },

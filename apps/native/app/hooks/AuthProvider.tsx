@@ -35,7 +35,6 @@ export const AuthContextProvider = ({ children }: {children: ReactElement}) => {
 
       if (session) {
         
-
         const currentTime = Math.floor(Date.now() / 1000); // in seconds
         const isExpired = (session.expires_at ?? 0) < currentTime;
 
@@ -86,6 +85,9 @@ export const AuthContextProvider = ({ children }: {children: ReactElement}) => {
 
         
       } else {
+
+        console.log("session is NULL")
+
         setSession(null)
         setInitialzied(true)
       }

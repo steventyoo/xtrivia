@@ -1,4 +1,4 @@
-import { FontNames, FontSizes } from "@app/theme/fonts";
+import { Fonts, FontSizes } from "@app/theme/fonts";
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -6,13 +6,18 @@ import AuthCTAButton from "@app/components/buttons/AuthCTAButton";
 import Logo from "@app/components/Logo";
 import { AuthStackParamsList } from "@app/navigation/AuthStack";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
+import { RootStackParamsList } from "@app/navigation/RootStack";
 
 const AuthScreen = () => {
 
-  const navigation = useNavigation<NavigationProp<AuthStackParamsList>>()
+  const navigation = useNavigation<NavigationProp<AuthStackParamsList & RootStackParamsList>>()
 
   const handleSignup = () => {
     navigation.navigate('RegisterScreen')
+  }
+
+  const handlePlayDailyChallenge = () => {
+    navigation.navigate('Challenge')
   }
 
   return (
@@ -38,6 +43,7 @@ const AuthScreen = () => {
         containerStyle={styles.buttonsCommon}
       />
       <AuthCTAButton
+        onPress={handlePlayDailyChallenge}
         type="secondary"
         text="play daily challenge"
         containerStyle={styles.buttonsCommon}
@@ -65,14 +71,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   welcomeText: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.h.large,
     marginTop: 30,
     alignSelf: 'center',
     color: 'black'
   },
   welcomeDescText: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: FontSizes.h.regular,
     marginTop: 30,
     color: 'black',

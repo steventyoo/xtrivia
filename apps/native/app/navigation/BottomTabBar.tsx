@@ -1,5 +1,5 @@
 import { Colors } from "@app/theme/colors";
-import { FontNames, FontSizes } from "@app/theme/fonts";
+import { Fonts, FontSizes } from "@app/theme/fonts";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     height: 25
   },
   itemText: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     marginTop: 5,
     fontSize: FontSizes.body.small
   }

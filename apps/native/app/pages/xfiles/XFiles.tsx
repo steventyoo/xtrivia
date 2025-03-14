@@ -1,7 +1,7 @@
 import { StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Logo from '@app/components/Logo';
-import { FontNames } from '@app/theme/fonts';
+import { Fonts } from '@app/theme/fonts';
 
 const XFilesScreen = () => {
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   title: {
-    fontFamily: FontNames.Inconsolata,
+    fontFamily: Fonts.Inconsolata.regular,
     fontSize: 30,
     marginTop: 30,
     alignSelf: 'center'

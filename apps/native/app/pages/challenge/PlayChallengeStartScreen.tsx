@@ -2,8 +2,24 @@ import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Logo from '@app/components/Logo';
 import { Image } from 'expo-image';
+import { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { DailyChallengeStackParamsList } from '@app/navigation/PlayChallengeStack';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 const PlayChallengeStartScreen = () => {
+
+  const navigation = useNavigation<StackNavigationProp<DailyChallengeStackParamsList>>()
+
+  const delay3SecondsAndStartPlay = () => {
+    setTimeout(() => {
+      navigation.push('PlayChallengeScreen')
+    }, 1000)
+  }
+
+  useEffect(() => {
+    delay3SecondsAndStartPlay()
+  }, [])
 
   return (
     <SafeAreaView style={styles.container}>      
