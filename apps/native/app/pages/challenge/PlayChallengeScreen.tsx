@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, FlatList } from 'react-native';
+import { StyleSheet, View, Text, FlatList, Keyboard, Platform } from 'react-native';
 import ProfileSummaryView from '@app/components/templates/ProfileSummaryView';
 import ClockTimer from '@app/components/ClockTimer';
 import DotProgressBar from '@app/components/DotProgressBar';
@@ -29,6 +29,7 @@ const PlayChallengeScreen = () => {
   const [timer, setTimer] = useState(0)
   const [hintSelectionRow, setHintSelectionRow] = useState(0);
   const [typedAnswerText, setTypedAnswerText] = useState("")
+  const [keyboardHeight, setKeyboardHeight] = useState(0)
 
   const [answersMatched, setAnswersMatched] = useState<number[]>([])
 
@@ -141,8 +142,21 @@ const PlayChallengeScreen = () => {
   useEffect(() => {
     startTimer()
 
+    // For iOS platform only
+    const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', (event) => {
+      setKeyboardHeight(event.endCoordinates.height);
+    });
+
+    const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardHeight(0);
+    });
+
+
     return () => {
       clearInterval(timerIntervalRef.current)
+
+      keyboardDidShowListener.remove()
+      keyboardDidHideListener.remove()
     }
   }, [])
 
@@ -204,6 +218,7 @@ const PlayChallengeScreen = () => {
           findHintForAnswer(quiz.answers[hintSelectionRow], HintType.soft) 
           : playingStatus >= PlayStatus.strongerHinted ? findHintForAnswer(quiz.answers[hintSelectionRow], HintType.strong) : ""}
         containerStyle={{
+          marginBottom: Platform.OS === 'ios' ? keyboardHeight : 0
         }}
       />
     </SafeAreaView>
