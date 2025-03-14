@@ -5,7 +5,7 @@ import DotProgressBar from '@app/components/DotProgressBar';
 import { Colors } from '@app/theme/colors';
 import { Fonts, FontSizes } from '@app/theme/fonts';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import TypingAnswerBar from './TypingAnswerBar';
 import { _mock_daily_quiz_ } from '@app/models/mocks/__quiz_mock__';
 import AnswerItemView from './AnswerItemView';
@@ -25,6 +25,8 @@ export enum PlayStatus {
 }
 
 const PlayChallengeScreen = () => {
+
+  const { bottom } = useSafeAreaInsets()
 
   const [timer, setTimer] = useState(0)
   const [hintSelectionRow, setHintSelectionRow] = useState(0);
@@ -218,7 +220,7 @@ const PlayChallengeScreen = () => {
           findHintForAnswer(quiz.answers[hintSelectionRow], HintType.soft) 
           : playingStatus >= PlayStatus.strongerHinted ? findHintForAnswer(quiz.answers[hintSelectionRow], HintType.strong) : ""}
         containerStyle={{
-          marginBottom: Platform.OS === 'ios' ? keyboardHeight : 0
+          marginBottom: Platform.OS === 'ios' ? (keyboardHeight > 0 ? keyboardHeight - bottom : 0) : 0
         }}
       />
     </SafeAreaView>
